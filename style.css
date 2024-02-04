@@ -15,12 +15,17 @@ figure {
     width: fit-content;
 }
 
+figcaption {
+    text-align: center;
+}
+
 dd {
     font-size: 15px;
+    font-weight:320;
 }
 
 a {
-    color: inherit;
+    color: rgb(222, 207, 255);
 }
 
 h1 {
