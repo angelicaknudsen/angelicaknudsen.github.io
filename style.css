@@ -9,14 +9,20 @@ body {
 }
 
 figure {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
+    justify-content: center;
 }
 
 figcaption {
     text-align: center;
+}
+
+figure > figcaption {
+    width: 100%;
 }
 
 dd {
