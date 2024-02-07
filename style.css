@@ -48,6 +48,10 @@ img {
     max-height: 200px;
 }
 
+section {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
 
 /* Add a black background color to the top navigation */
 .topnav {
