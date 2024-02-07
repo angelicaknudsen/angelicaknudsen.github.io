@@ -32,6 +32,11 @@ dd {
 
 a {
     color: rgb(222, 207, 255);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 h1 {
