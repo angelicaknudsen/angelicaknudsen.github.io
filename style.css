@@ -13,8 +13,7 @@ figure {
     flex-wrap: wrap;
     margin-left: auto;
     margin-right: auto;
-    justify-content: space-evenly;
-    row-gap: 0.5em;
+    justify-content: center;
 }
 
 figcaption {
@@ -43,9 +42,16 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    margin-bottom: 0px;
+}
+
 img {
     max-width: min(100%, 80vw);
     max-height: 200px;
+    margin-top: 0.7em;
+    margin-left: 0.3em;
+    margin-right: 0.3em;
 }
 
 section {
