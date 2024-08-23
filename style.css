@@ -59,14 +59,14 @@ a:hover {
 
 h1 {
     text-align: center;
-    color: rgb(255, 50, 50);
+    color: rgb(255, 155, 155);
     text-shadow: 2px, 2px, #ffd6d6;
     font-weight: bolder;
 }
 
 h2 {
     margin-bottom: 0px;
-    color: rgb(255, 50, 50);
+    color: rgb(255, 155, 155);
 }
 
 img {
@@ -84,7 +84,7 @@ section {
 
 .topnav a.name {
     float: left;
-    color:rgb(255, 50, 50);
+    color:rgb(255, 155, 155);
     font-size: 23px;
     font-weight: bold;
 }
