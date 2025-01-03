@@ -130,7 +130,7 @@ text-decoration: none;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
-        width: 100%
+        width: 50px;
     }
 
 /*
@@ -147,11 +147,6 @@ text-decoration: none;
         margin-left: auto;
         margin-right: auto;
         float: none;
-        width: 100%
-    }
-
-    .billy img {
-        margin-left: 15px !important;
     }
 
     .sublinks {
