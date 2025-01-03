@@ -151,7 +151,8 @@ text-decoration: none;
 
     .sublinks {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
         float: none;
         width: 100%;
     }
