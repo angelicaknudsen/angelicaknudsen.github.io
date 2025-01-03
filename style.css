@@ -110,10 +110,48 @@ padding: 5px 10px;
 text-decoration: none;
 }
 
+.topnav .sublinks a {
+    float: right;
+    display: block;
+    color:  rgb(255, 255, 255);
+    text-align: center;
+    padding: 5px 10px;
+    text-decoration: none;
+    }
+
 @media screen and (max-width: 768px) {
+    .topnav {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .topnav a.name {
         float: none;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
         width: 100%
+    }
+
+/*
+    .img-fluid {
+        float: none;
+        padding: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: -70px;
+    } */
+    
+
+    .billy {
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        width: 100%
+    }
+
+    .billy img {
+        margin-left: 15px !important;
     }
 
     .sublinks {
@@ -122,6 +160,7 @@ text-decoration: none;
         float: none;
         width: 100%;
     }
+
   }
 
 /* Change the color of links on hover */
@@ -180,3 +219,25 @@ text-decoration: none;
   
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;}
+
+  .billy {
+    display: block;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    margin-top: -20px;
+    margin-bottom: -30px;
+  }
+
+  .billy img {
+    float: none;
+    margin-left: 0px;
+}
+
+.billy img:hover {
+    content: url('images/billy_hover.png');
+}
+
+  img.img-fluid {
+    display: block;
+  }
