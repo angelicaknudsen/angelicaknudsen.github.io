@@ -1,8 +1,13 @@
 
 body {
     background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
+    color:rgb(255, 255, 255);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+}
+
+body .main {
+    background-color: rgb(0, 0, 0);
     max-width: 80ch;
     margin: auto;
     padding: 2ch;
@@ -92,6 +97,9 @@ section {
 /* Add a black background color to the top navigation */
 .topnav {
 background-color: rgb(0, 0, 0);
+border-bottom: 1px solid #1b1b1b;
+padding: 0px;
+margin: 0px;
 width: 100%;
 overflow: hidden;
 }
@@ -99,6 +107,7 @@ overflow: hidden;
 .sublinks {
 display: flex;
 float: right;
+
 }
 
 /* Style the links inside the navigation bar */
@@ -107,7 +116,7 @@ float: right;
 display: block;
 color:  rgb(255, 255, 255);
 text-align: center;
-padding: 5px 10px;
+padding: 10px 10px;
 text-decoration: none;
 }
 
@@ -116,7 +125,7 @@ text-decoration: none;
     display: block;
     color:  rgb(255, 255, 255);
     text-align: center;
-    padding: 5px 10px;
+    padding: 27px 10px;
     text-decoration: none;
     }
 
@@ -145,8 +154,10 @@ text-decoration: none;
     
 
     .billy {
+        margin-left: 0px !important;
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: -50px !important;
         float: none;
     }
 
@@ -185,12 +196,17 @@ text-decoration: none;
     background-color: #7fbfe9;
   }
   
+
+  
   /* The container <div> - needed to position the dropdown content */
+
+  /*
   .dropdown {
     position: relative;
     float: right;
     display: inline-block;
   }
+*/
   
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
@@ -210,6 +226,7 @@ text-decoration: none;
     text-decoration: none;
     display: block;
   }
+
   
   /* Change color of dropdown links on hover */
   .dropdown-content a:hover {background-color: #ddd;}
@@ -222,7 +239,8 @@ text-decoration: none;
     width: 100px;
     height: 100px;
     overflow: hidden;
-    margin-top: -20px;
+    margin-left: 5px;
+    margin-top: -10px;
     margin-bottom: -30px;
   }
 
