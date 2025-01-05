@@ -111,7 +111,6 @@ overflow: hidden;
 .sublinks {
 display: flex;
 float: right;
-
 }
 
 /* Style the links inside the navigation bar */
@@ -177,14 +176,12 @@ text-decoration: none;
 
 /* Change the color of links on hover */
 .topnav a:hover {
-font-weight: bold;
 text-decoration-line: underline;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-font-weight: bold;
-text-decoration: none;
+text-decoration: underline;
 }
 
 .dropbtn {
@@ -248,13 +245,16 @@ text-decoration: none;
     margin-bottom: -30px;
   }
 
-  .billy img {
+  a .billy {
     float: none;
     margin-left: 0px;
+    transition: 0.3s opacity;
 }
 
-.billy img:hover {
-    content: url('images/billy_hover.png');
+
+a:hover .billy{
+    /* content: url('images/billy_hover.png'); */
+    opacity: 0.5;
 }
 
   img.img-fluid {
