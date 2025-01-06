@@ -55,10 +55,11 @@ dd {
 a {
     color: rgb(121, 215, 255);
     text-decoration: none;
+    transition: 0.3s color;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: rgb(195, 237, 255);
 }
 
 h1 {
@@ -103,8 +104,11 @@ section {
     border-bottom: 1px solid #1b1b1b;
     padding: 0px;
     margin: 0px;
-    width: 100%;
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1em;
 }
 
 .sublinks {
@@ -117,7 +121,7 @@ section {
 .topnav a {
     float: right;
     display: block;
-    color: rgb(255, 255, 255);
+    color: rgb(85, 85, 85);
     text-align: center;
     padding: 10px 10px;
     text-decoration: none;
@@ -126,10 +130,11 @@ section {
 .topnav .sublinks a {
     float: right;
     display: block;
-    color: rgb(255, 255, 255);
+    color: rgb(150, 150, 150);
     text-align: center;
     padding: 5px 10px;
     text-decoration: none;
+    transition: 0.3s color;
 }
 
 @media screen and (max-width: 768px) {
@@ -157,10 +162,8 @@ section {
 
 
     .billy {
-        margin-left: 0px !important;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: -50px !important;
         float: none;
     }
 
@@ -170,20 +173,18 @@ section {
         justify-content: center;
         float: none;
         width: 100%;
-        max-width: calc(100vw - 2em);
-        margin-left: 1em;
     }
 
 }
 
 /* Change the color of links on hover */
-.topnav a:hover {
-    text-decoration-line: underline;
+.topnav .sublinks a:hover {
+    color: rgb(255, 255, 255);
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-    text-decoration: underline;
+    color: rgb(255, 255, 255);
 }
 
 .dropbtn {
@@ -255,13 +256,15 @@ section {
 a .billy {
     float: none;
     margin-left: 0px;
-    transition: 0.3s opacity;
+    transition: 0.3s filter;
 }
 
 
 a:hover .billy {
     /* content: url('images/billy_hover.png'); */
-    opacity: 0.7;
+    /* opacity: 0.7; */
+    filter: brightness(130%);
+
 }
 
 img.img-fluid {
@@ -279,7 +282,7 @@ img.img-fluid {
 }
 
 .blog-links {
-    color: rgb(149, 149, 149) !important;
+    color: rgb(150, 150, 150) !important;
 }
 
 .blog-links section {
@@ -297,5 +300,5 @@ ol {
 }
 
 .copyright {
-    color: rgb(149, 149, 149);
+    color: rgb(150, 150, 150);
 }
