@@ -1,8 +1,7 @@
-
 body {
     background-color: rgb(0, 0, 0);
-    color:rgb(255, 255, 255);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(255, 255, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;
 }
 
@@ -25,7 +24,7 @@ figcaption {
     text-align: center;
 }
 
-figure > figcaption {
+figure>figcaption {
     width: 100%;
 }
 
@@ -40,15 +39,15 @@ dt {
 }
 
 ul {
-margin: 0;
-padding-bottom: 5px;
-font-size: 15px;
-font-weight:320;
+    margin: 0;
+    padding-bottom: 5px;
+    font-size: 15px;
+    font-weight: 320;
 }
 
 dd {
     font-size: 15px;
-    font-weight:400;
+    font-weight: 400;
     margin: 0;
     padding: 0;
 }
@@ -93,44 +92,45 @@ section {
 
 .topnav a.name {
     float: left;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     font-size: 23px;
     font-weight: bold;
 }
 
 /* Add a black background color to the top navigation */
 .topnav {
-background-color: rgb(0, 0, 0);
-border-bottom: 1px solid #1b1b1b;
-padding: 0px;
-margin: 0px;
-width: 100%;
-overflow: hidden;
+    background-color: rgb(0, 0, 0);
+    border-bottom: 1px solid #1b1b1b;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .sublinks {
-display: flex;
-float: right;
+    display: flex;
+    float: right;
+    padding-block: 20px;
 }
 
 /* Style the links inside the navigation bar */
-.topnav  a {
-float: right;
-display: block;
-color:  rgb(255, 255, 255);
-text-align: center;
-padding: 10px 10px;
-text-decoration: none;
+.topnav a {
+    float: right;
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
 }
 
 .topnav .sublinks a {
     float: right;
     display: block;
-    color:  rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     text-align: center;
-    padding: 27px 10px;
+    padding: 5px 10px;
     text-decoration: none;
-    }
+}
 
 @media screen and (max-width: 768px) {
     .topnav {
@@ -146,7 +146,7 @@ text-decoration: none;
         width: 50px;
     }
 
-/*
+    /*
     .img-fluid {
         float: none;
         padding: 0px;
@@ -154,7 +154,7 @@ text-decoration: none;
         margin-right: auto;
         margin-bottom: -70px;
     } */
-    
+
 
     .billy {
         margin-left: 0px !important;
@@ -170,18 +170,20 @@ text-decoration: none;
         justify-content: center;
         float: none;
         width: 100%;
+        max-width: calc(100vw - 2em);
+        margin-left: 1em;
     }
 
-  }
+}
 
 /* Change the color of links on hover */
 .topnav a:hover {
-text-decoration-line: underline;
+    text-decoration-line: underline;
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-text-decoration: underline;
+    text-decoration: underline;
 }
 
 .dropbtn {
@@ -190,52 +192,57 @@ text-decoration: underline;
     font-size: 16px;
     border: none;
     cursor: pointer;
-  }
-  
-  /* Dropdown button on hover & focus */
-  .dropbtn:hover, .dropbtn:focus {
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
     background-color: #7fbfe9;
-  }
-  
+}
 
-  
-  /* The container <div> - needed to position the dropdown content */
 
-  /*
+
+/* The container <div> - needed to position the dropdown content */
+
+/*
   .dropdown {
     position: relative;
     float: right;
     display: inline-block;
   }
 */
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
     display: none;
     position: absolute;
-    right:0;
+    right: 0;
     background-color: #f1f1f1;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
+}
 
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd;}
-  
-  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-  .show {display:block;}
 
-  .billy {
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display: block;
+}
+
+.billy {
     display: block;
     width: 100px;
     height: 100px;
@@ -243,52 +250,52 @@ text-decoration: underline;
     margin-left: 5px;
     margin-top: -10px;
     margin-bottom: -30px;
-  }
+}
 
-  a .billy {
+a .billy {
     float: none;
     margin-left: 0px;
     transition: 0.3s opacity;
 }
 
 
-a:hover .billy{
+a:hover .billy {
     /* content: url('images/billy_hover.png'); */
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
-  img.img-fluid {
+img.img-fluid {
     display: block;
-  }
+}
 
-  .date {
+.date {
     margin-top: -10px;
-    color:rgb(149, 149, 149);
+    color: rgb(149, 149, 149);
     text-align: center;
-  }
+}
 
-  .blog-text p{
+.blog-text p {
     margin-top: 7px;
-  }
+}
 
-  .blog-links{
-    color:rgb(149, 149, 149) !important;
-  }
+.blog-links {
+    color: rgb(149, 149, 149) !important;
+}
 
-  .blog-links section {
+.blog-links section {
     margin-top: 5px;
     margin-bottom: 0px;
-  }
-  
-  .table-of-contents {
+}
+
+.table-of-contents {
     margin-top: 10px;
     margin-bottom: 0px;
-  }
+}
 
-  ol {
+ol {
     margin-top: 0px;
-  }
+}
 
-  .copyright {
-    color:rgb(149, 149, 149);
-  }
+.copyright {
+    color: rgb(149, 149, 149);
+}
