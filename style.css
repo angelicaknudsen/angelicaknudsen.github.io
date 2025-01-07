@@ -31,22 +31,23 @@ figure>figcaption {
 p {
     margin: 0;
     padding: 3px;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 dt {
     font-weight: bold;
+    font-size: 18px;
 }
 
 ul {
     margin: 0;
     padding-bottom: 5px;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 320;
 }
 
 dd {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
     margin: 0;
     padding: 0;
@@ -56,6 +57,7 @@ a {
     color: rgb(121, 215, 255);
     text-decoration: none;
     transition: 0.3s color;
+    font-size: 18px;
 }
 
 a:hover {
@@ -67,15 +69,19 @@ h1 {
     color: rgb(255, 255, 255);
     text-shadow: 2px, 2px, #ffd6d6;
     font-weight: bolder;
+    font-size: 40px;
 }
 
 h2 {
     margin-bottom: 0px;
     color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight:700;
 }
 
 h3 {
     margin-bottom: 0px;
+    font-size: 25px;
 }
 
 img {
@@ -94,7 +100,7 @@ section {
 .topnav a.name {
     float: left;
     color: rgb(255, 255, 255);
-    font-size: 23px;
+    font-size: 25px;
     font-weight: bold;
 }
 
