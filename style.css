@@ -329,16 +329,22 @@ html {
 }
 
 .project-gallery {
-    display: block;
-    align-items: center;
-    justify-content: center;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
     background-color: #7fbfe9;
 }
 
-.project-gallery img {
+.project-gallery a {
+    transition: 0.3s color;
+    display: block;
     flex: 1;
-    width: 30%;
+}
+
+.project-gallery img {
+    margin: auto;
     aspect-ratio: 4/3;
+    width: 100%;
     object-fit: cover;
     background-color: rgb(255, 255, 255);
 }
