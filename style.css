@@ -30,8 +30,9 @@ figure>figcaption {
 
 p {
     margin: 0;
-    padding: 3px;
+    padding: 5px;
     font-size: 18px;
+    line-height: 28px;
 }
 
 dt {
@@ -84,12 +85,19 @@ h3 {
     font-size: 25px;
 }
 
-img {
+figure img {
     max-width: min(100%, 80vw);
     max-height: 200px;
     margin-top: 0.7em;
     margin-left: 0.3em;
     margin-right: 0.3em;
+
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
 
 section {
@@ -255,14 +263,13 @@ section {
     height: 100px;
     overflow: hidden;
     margin-left: 5px;
-    margin-top: -10px;
-    margin-bottom: -30px;
+    margin-bottom: -50px;
 }
 
 a .billy {
     float: none;
     margin-left: 0px;
-    transition: 0.3s filter;
+    transition: 0.3s;
 }
 
 
@@ -315,4 +322,8 @@ li {
 
 html {
     scroll-behavior: smooth;
+}
+
+.tn {
+    text-align: center;
 }
