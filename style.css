@@ -189,6 +189,10 @@ section {
         width: 100%;
     }
 
+    .project-gallery a {
+        width: 100% !important;
+    }
+
 }
 
 /* Change the color of links on hover */
@@ -330,16 +334,44 @@ html {
 
 .project-gallery {
     display: flex;
-    gap: 10px;
-    padding: 10px;
-    background-color: #7fbfe9;
+    flex-wrap: wrap;
+    padding: 2px;
+    gap: 2px;
+    align-content: center;
+    background-color:#000000;
 }
 
 .project-gallery a {
-    transition: 0.3s color;
-    display: block;
-    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #000000;
+    background-size: cover;
+    aspect-ratio: 4/3;
+    font-size: 8px;
+    width: calc((100% - 4px)/3);
+    filter: brightness(1);
+    transition: 0.3s opacity;
+    overflow: hidden;
 }
+
+.project-gallery {
+    color: #ffffff !important;
+}
+
+.project-gallery p {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    width: 80%;
+}
+
+.project-gallery a:hover img {
+    opacity: 0.3;
+}
+
 
 .project-gallery img {
     margin: auto;
@@ -347,4 +379,6 @@ html {
     width: 100%;
     object-fit: cover;
     background-color: rgb(255, 255, 255);
+    opacity: 0.2;
+    transition: 0.3s;
 }
