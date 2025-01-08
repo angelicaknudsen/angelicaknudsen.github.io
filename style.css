@@ -45,6 +45,7 @@ ul {
     padding-bottom: 5px;
     font-size: 18px;
     font-weight: 320;
+    line-height: 28px;
 }
 
 dd {
@@ -52,6 +53,7 @@ dd {
     font-weight: 400;
     margin: 0;
     padding: 0;
+    line-height: 28px;
 }
 
 a {
@@ -318,6 +320,7 @@ ol {
 
 li {
     padding: 3px;
+    line-height: 28px;
 }
 
 .copyright {
@@ -352,6 +355,7 @@ html {
     filter: brightness(1);
     transition: 0.3s opacity;
     overflow: hidden;
+    border-radius: 5px;
 }
 
 .project-gallery {
@@ -365,11 +369,13 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
     color: rgb(255, 255, 255);
+    font-weight: 500;
     width: 80%;
 }
 
 .project-gallery a:hover img {
     opacity: 0.3;
+    transform: scale(1.2);
 }
 
 
