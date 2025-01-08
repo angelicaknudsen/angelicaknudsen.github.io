@@ -93,6 +93,7 @@ figure img {
     margin-top: 0.7em;
     margin-left: 0.3em;
     margin-right: 0.3em;
+    border-radius: 5px;
 
     animation: fadeIn 0.3s;
 }
