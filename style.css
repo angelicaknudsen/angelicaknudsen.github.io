@@ -165,7 +165,6 @@ section {
         margin-left: auto;
         margin-right: auto;
         text-align: center;
-        width: 50px;
     }
 
     /*
@@ -181,7 +180,8 @@ section {
     .billy {
         margin-left: auto;
         margin-right: auto;
-        float: none;
+        float: left;
+        width: 120px;
     }
 
     .sublinks {
@@ -266,21 +266,18 @@ section {
 
 .billy {
     display: block;
-    width: 100px;
-    height: 100px;
     overflow: hidden;
-    margin-left: 5px;
-    margin-bottom: -50px;
+    margin-left: 0px;
 }
 
-a .billy {
+.billy a {
     float: none;
     margin-left: 0px;
     transition: 0.3s;
 }
 
 
-a:hover .billy {
+.billy a:hover {
     /* content: url('images/billy_hover.png'); */
     /* opacity: 0.7; */
     filter: brightness(130%);
