@@ -450,11 +450,16 @@ html {
     border: 1px solid #1b1b1b;
 }
 
+#expand-toggle:checked ~ #expand-btn ~ .menu-sublinks-holder{
+    border-top: 1px solid rgb(150, 150, 150);
+}
+
 .menu-sublinks-holder {
     position: absolute;
     overflow: hidden;
     transform: translate(-30px);
     z-index: 2;
+    transition: 0.3s;
 }
 
 .menu-sublinks {
