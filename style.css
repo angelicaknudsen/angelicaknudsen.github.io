@@ -444,20 +444,25 @@ html {
     transform: rotate(180deg);
 }
 
-#expand-toggle:checked ~ #expand-btn ~ .menu-sublinks {
-    transform: translate(-30px, 10px);
+#expand-toggle:checked ~ #expand-btn ~ .menu-sublinks-holder .menu-sublinks {
+    transform: translate(0px, 0px);
     opacity: 1;
     border: 1px solid #1b1b1b;
-    width: auto;
 }
 
+.menu-sublinks-holder {
+    position: absolute;
+    overflow: hidden;
+    transform: translate(-30px);
+    z-index: 2;
+}
 
 .menu-sublinks {
-    position: absolute;
-    width: 0px;
+    display: block;
+    position: relative;
     opacity: 0;
     overflow: hidden;
-    transform: translate(-30px, 10px);
+    transform: translate(0px, -100%);
     background: rgb(0, 0, 0);
     transition-delay: 1s;
     transition-property: height;
