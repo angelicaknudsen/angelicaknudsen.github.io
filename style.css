@@ -30,7 +30,7 @@ figure>figcaption {
 
 p {
     margin: 0;
-    padding: 5px;
+    padding-top: 5px;
     font-size: 18px;
     line-height: 28px;
 }
@@ -305,19 +305,6 @@ img.img-fluid {
     text-align: center;
 }
 
-.blog-text p {
-    margin-top: 7px;
-}
-
-.blog-links p {
-    color: rgb(150, 150, 150) !important;
-}
-
-.blog-links section {
-    margin-top: 5px;
-    margin-bottom: 0px;
-}
-
 .table-of-contents {
     margin-top: 10px;
     margin-bottom: 0px;
@@ -526,4 +513,40 @@ html {
     width: 25px;
     filter: brightness(0.1);
     opacity: 1;
+}
+
+.blog-links {
+    display: grid;
+    row-gap: 10px;
+}
+
+.blog-links section {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    border: 1px solid #1b1b1b;
+    transition: 0.3s;
+}
+
+.blog-links section:hover {
+    box-shadow: 5px 5px 10px #1b1b1b;
+}
+
+.blog-links h3 {
+    margin-top: 0px;
+    font-size: 20px;
+}
+
+.blog-text p {
+    margin-top: 5px;
+}
+
+.blog-links dd {
+    color: rgb(255, 255, 255);
+}
+
+.blog-links p {
+    color: rgb(150, 150, 150) !important;
 }
