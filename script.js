@@ -26,9 +26,6 @@ document.addEventListener('click', function(event) {
     }
 }); */
 
-
-// document.getElementById("JellyK").style.color = 'red';
-
 // document.addEventListener('click', function(event) {
 //     const checkbox = document.getElementById('expand-toggle');
 
@@ -37,3 +34,10 @@ document.addEventListener('click', function(event) {
 //         checkbox.checked = false;
 //     }
 // });
+
+const copyrightLabels = document.getElementsByClassName("copyright");
+
+for(let i = 0; i < copyrightLabels.length; i++) {
+    let element = copyrightLabels[i];
+    element.textContent = "© Angelica Knudsen 2025";
+  }
