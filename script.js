@@ -14,3 +14,26 @@ window.onclick = function(event) {
         }
     }
 } */
+
+/*
+document.getElementById("JellyK").style.color = 'red';
+
+document.addEventListener('click', function(event) {
+    const dropDownBtn = document.getElementById('expand-toggle');
+    
+    if (dropDownBtn.contains(event.Target)) {
+        dropDownBtn.style.backgroundColor = 'red';
+    }
+}); */
+
+
+// document.getElementById("JellyK").style.color = 'red';
+
+// document.addEventListener('click', function(event) {
+//     const checkbox = document.getElementById('expand-toggle');
+
+//     // Check if the click target is not the checkbox itself
+//     if (!checkbox.contains(event.target)) {
+//         checkbox.checked = false;
+//     }
+// });

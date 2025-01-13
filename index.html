@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type='image/x-icon' href="/images/favicon.ico">
 </head>
 
 <body>
@@ -16,12 +17,12 @@
             </a>
         </div>
 
-        <div class="dropdown-menu">
+        <div class="dropdown-menu" id="dropdown-menu-id">
             <input type="checkbox" id="expand-toggle">
 
             <label for="expand-toggle" id="expand-btn">
                 <div class="expand-menu">
-                    <div class="menu-name">
+                    <div class="menu-name" id="menuuuu">
                         Menu
                     </div>
                     <div class="menu-arrow">
@@ -64,34 +65,40 @@
 
     <div class="main">
 
-    <h1>
+    <h1 id="JellyK">
         Angelica Knudsen
     </h1>
 
-    <figure>
-        <img src="images/poppingballoon.JPG" width=300px alt="Image of myself" class="center"/>
-        <figcaption>Me popping a balloon at the MIT Edgerton Strobe Project Laboratory</figcaption>
-    </figure>
-
-    <section>
-        <h2>
-            About Me
-        </h2>
+    <div class="about-me">
+        <!-- <figure>
+            
+            <figcaption>Me popping a balloon at the MIT Edgerton Strobe Project Laboratory</figcaption>
+        </figure> -->
+        <div>
+            <img src="images/me.JPG" alt="Image of myself" class="center"/>
+        </div>
+        
     
-        <p>
-            Pronouns: they/them
-        </p>
+        <section>
+            <h2>
+                About Me
+            </h2>
+        
+            <p>
+                Pronouns: they/them
+            </p>
+        
+            <p>I like to go by Jelly (like the food). I am an undergraduate student at MIT double majoring in Mechanical Engineering (with Energy) and Physics.
+                I am also a big bird person, with my current favorite bird being the American Crow.
+            </p>
     
-        <p>I like to go by Jelly (like the food). I am an undergraduate student at MIT double majoring in Mechanical Engineering (with Energy) and Physics.
-            I am also a big bird person, with my current favorite bird being the American Crow.
-        </p>
-
-        <p>
-            Talk to me about birds, sustainability, mechanical engineering, physics, or whatever! Some of my ramblings
-            will be posted to my (WIP) <a href="blog/">blog</a>.
-        </p>
-    
-    </section>
+            <p>
+                Talk to me about birds, sustainability, mechanical engineering, physics, or whatever! Some of my ramblings
+                will be posted to my (WIP) <a href="blog/">blog</a>.
+            </p>
+        
+        </section>
+    </div>
 
     </div>
 
