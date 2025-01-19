@@ -34,18 +34,19 @@ layout: "base.njk"
         </section>
     </a>-->
 
-    <a href="/posts/why-hummingbirds-are-amazing">
-        <section>
-            <h3>
-                Why Hummingbirds Are Amazing
-            </h3>
-            <dd>
-                I love hummingbirds, and you should too.
-            </dd>
-
-            <p>
-                Updated: 01/06/2024
-            </p>
-        </section>
-    </a>
+    {% for post in collections.posts reversed %}
+        <a href="{{ post.url }}">
+            <section>
+                <h3>
+                    {{ post.data.title }}
+                </h3>
+                <dd>
+                    {{ post.data.descriptor }}
+                </dd>
+                <p>
+                    Updated: {{ post.data.date | date: "%m/%d/%Y" }}
+                </p>
+            </section>
+        </a>
+    {% endfor %}
 </div>
