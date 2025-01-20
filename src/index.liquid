@@ -1,0 +1,81 @@
+---
+title: "Home"
+layout: "base.njk"
+---
+
+<h1>Angelica Knudsen</h1>
+
+<div class="about-me">
+    <!-- <figure>
+        
+        <figcaption>Me popping a balloon at the MIT Edgerton Strobe Project Laboratory</figcaption>
+    </figure> -->
+    <div>
+        <img src="/images/me.jpg" alt="Image of myself" class="center"/>
+    </div>
+    
+
+    <section>
+        <h2>
+            About Me
+        </h2>
+    
+        <p>
+            Pronouns: they/them
+        </p>
+    
+        <p>I like to go by Jelly (like the food). I am an undergraduate student at MIT double majoring in Mechanical Engineering (with Energy) and Physics.
+            I am also a big bird person, with my current favorite bird being the American Crow.
+        </p>
+
+        <p>
+            Talk to me about birds, sustainability, mechanical engineering, physics, or whatever! Some of my ramblings
+            will be posted to my (WIP) <a href="blog/">blog</a>.
+        </p>
+    </section>
+
+</div>
+
+<div class="blog-links">
+    <h2>
+        Latest Blog Post
+    </h2>
+
+    {% comment %} {% for post in collections.posts reversed offset %}
+        <a href="{{ post.url }}">
+            <section>
+                <h3>
+                    {{ post.data.title }}
+                </h3>
+                <dd>
+                    {{ post.data.descriptor }}
+                </dd>
+                <p>
+                    Updated: {{ post.data.date | date: "%m/%d/%Y" }}
+                </p>
+            </section>
+        </a>
+    {% endfor %} {% endcomment %}
+
+    {% assign lastPost = collections.posts.last %}
+    <a href="{{ lastPost.url }}">
+            <section>
+                <h3>
+                    {{ lastPost.data.title }}
+                </h3>
+                <dd>
+                    {{ lastPost.data.descriptor }}
+                </dd>
+                <p>
+                    Updated: {{ lastPost.data.date | date: "%m/%d/%Y" }}
+                </p>
+            </section>
+    </a>
+
+    <a href="blog/" style="width: 110px">
+        <section>
+            Read more
+        </section>
+    </a>
+
+</div>
