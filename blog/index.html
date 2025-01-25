@@ -22,7 +22,7 @@
   </script>
 </head>
 <body>
-  <div class="topnav">
+  <div class="topnav" id="tn">
         <div class="billy">
             <a class = 'name' href="/">
                 <img src="/images/billy.png" title="Hi! I'm Billy, a rock pigeon." height=50px width=60px class='img-fluid' alt="billy">
@@ -93,6 +93,12 @@
     </header> -->
     <main class="main container">
       
+<div class='top-layout'>
+    <a href="/">home</a> /
+    <a href="/blog"> blog</a>
+</div>
+
+
 <h1>
     Blog
 </h1>
@@ -125,7 +131,21 @@
     </a>-->
 
     
-        <a href="/posts/yappings-of-misc-energy-topics/">
+        <a href="/blog/ranking-my-cursed-sketches/">
+            <section>
+                <h3>
+                    ranking my cursed sketches
+                </h3>
+                <dd>
+                    you aren't ready
+                </dd>
+                <p>
+                    Updated: 01/20/2025
+                </p>
+            </section>
+        </a>
+    
+        <a href="/blog/yappings-of-misc-energy-topics/">
             <section>
                 <h3>
                     Yappings of misc. energy topics
@@ -139,7 +159,7 @@
             </section>
         </a>
     
-        <a href="/posts/why-hummingbirds-are-amazing/">
+        <a href="/blog/why-hummingbirds-are-amazing/">
             <section>
                 <h3>
                     Why Hummingbirds Are Amazing
@@ -154,7 +174,14 @@
         </a>
     
 </div>
+
     </main>
+
+    <div class='back-to-top'>
+       <a href="#" onclick="document.body.scrollTop=0;document.documentElement.scrollTop=0;event.preventDefault()">
+            ↑ Back to top
+        </a>
+    </div>
   </div>
 
   <div class="bottomnav">
