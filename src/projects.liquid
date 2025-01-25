@@ -1,13 +1,14 @@
 ---
 title: "Projects"
-layout: "base.njk"
+layout: "subpage.njk"
+self: "projects"
 ---
 
 <h1>
     {{ title }}
 </h1>
 
-<div class="project-gallery" id='projgal'>
+{% comment %} <div class="project-gallery" id='projgal'>
     <a href="#SuperUROP-anchor">
         <img src="/images/hummingbird.jpg" alt="Hummingbird">
         <p>
@@ -50,15 +51,31 @@ layout: "base.njk"
             Data Processor and Grapher for Marine Research
         </p>
     </a>
-    <a href="#jeo-anchor">
+    <a href="/projects/personal-jeopardy">
         <img src="/images/jeopardychoicescreen.png" alt="jeopardy">
         <p>
             Personal Jeopardy Game
         </p>
     </a>
+</div> {% endcomment %}
+
+<div class='project-gallery'>
+
+    {% for project in collections.projects reversed %}
+        <div class="gallery-image" style="background-image: url('{{ project.data.image }}')">
+            <a href="{{ project.url }}">
+                <div class="backdrop">
+                    <p>
+                        {{ project.data.title }}
+                    </p>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+    
 </div>
 
-<section>
+{% comment %} <section>
     <h2 id="SuperUROP-anchor">
         How Hummingbird Feathers Make Light Dance and Water Bounce
     </h2>
@@ -312,4 +329,4 @@ layout: "base.njk"
         <img src="/images/jeopardyrankingsmore.png" alt="jeopardy rankings screen">
         <img src="/images/jeopardyrulesscreen.png" alt="jeopardy rules screen">
     </figure>
-</section>
+</section> {% endcomment %}

@@ -1,0 +1,12 @@
+---
+layout: "base.njk"
+permalink: "/blog/{{ self }}/"
+---
+
+<div class='top-layout'>
+    <a href="/">home</a> /
+    <a href="/blog">blog</a> /
+    <a href="/blog/{{ self }}">{{ self }}</a>
+</div>
+
+{{ content | safe }}

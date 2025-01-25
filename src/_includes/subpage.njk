@@ -1,0 +1,10 @@
+---
+layout: "base.njk"
+---
+
+<div class='top-layout'>
+    <a href="/">home</a> /
+    <a href="/{{ self }}"> {{ self }}</a>
+</div>
+
+{{ content | safe }}

@@ -1,0 +1,69 @@
+---
+title: "Personal Jeopardy Game"
+layout: "projects.njk"
+timeline: "Timeline: March-May 2020"
+image: "/images/jeopardychoicescreen.png"
+self: "personal-jeopardy"
+---
+
+<div class="portfolio-base">
+        <div class="project-left-side">
+            <div class="objective">
+            <h3>
+                Objective
+            </h3>
+        
+            <p>
+            Created an individual trivia game that is heavily inspired by Jeopardy. It keeps track of your score and money earned,
+            constrains you to 30 seconds for each question, and logs separate attempts so that 
+            you can compete with others. There is also a rankings page that displays each attempt.
+            </p>
+        </div>
+    
+        <div class="outcomes">
+            <h3>
+                Outcomes & Contributions
+            </h3>
+            <p>
+                Created entirely by myself.
+            </p>
+            <p>
+                Questions were tailored to my specific interests, such as my hobbies and memes I liked.
+            </p>
+        </div>
+    
+        <div class="technical">
+            <h3>
+                Technical Details & Skills
+            </h3>
+            <p>
+                Language: Visual Basic .net
+            </p>
+            <p>
+                Other: Photoshop
+            </p>
+        </div>
+    </div>
+    
+    <div class="project-images">
+        <figure>
+        <img src="/images/jeopardymainscreen.png" alt="jeopardy main screen">
+        <img src="/images/jeopardychoicescreen.png" alt="jeopardy choices screen">
+        <img src="/images/jeopardyrankingsmore.png" alt="jeopardy rankings screen">
+        <img src="/images/jeopardyrulesscreen.png" alt="jeopardy rules screen">
+        </figure>
+    </div>
+</div>
+
+{% comment %} {% for project in collections.projects reversed %}
+    <a href="{{ project.url }}">
+        <section>
+            <h3>
+                {{ project.data.title }}
+            </h3>
+            <p>
+                Updated: {{ post.data.timeline }}
+            </p>
+        </section>
+    </a>
+{% endfor %} {% endcomment %}
