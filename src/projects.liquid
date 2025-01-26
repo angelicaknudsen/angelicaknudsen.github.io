@@ -59,10 +59,10 @@ self: "projects"
     </a>
 </div> {% endcomment %}
 
-<div class='project-gallery'>
+<div class='project-gallery' id="projectGallery">
 
     {% for project in collections.projects reversed %}
-        <div class="gallery-image" style="background-image: url('{{ project.data.image }}')">
+        <div class="projectIndex" data-projectindex="{{ project.data.projectIndex }}" style="background-image: url('{{ project.data.image }}')">
             <a href="{{ project.url }}">
                 <div class="backdrop">
                     <p>
@@ -72,9 +72,39 @@ self: "projects"
             </a>
         </div>
     {% endfor %}
-    
 </div>
 
+{% comment %} <script src="/script.js"></script> {% endcomment %}
+{% comment %} <div id="projectGallery">
+    <div class="index" data-projectIndex="1">1</div>
+    <div class="index" data-projectIndex="3">3</div>
+    <div class="index" data-projectIndex="2">2</div>
+</div> {% endcomment %}
+
+{% comment %} <button onclick="SortData()">
+        Sort list
+</button>
+
+<script>
+function comparator(a, b) {
+    if (a.dataset.projectindex < b.dataset.projectindex)
+        return 1;
+    if (a.dataset.projectindex > b.dataset.projectindex)
+        return -1;
+    return 0;
+}
+
+function SortData() {
+    var indexes = document.querySelectorAll("[data-projectIndex]");
+    var indexesArray = Array.from(indexes);
+    console.log(indexesArray)
+    let sorted = indexesArray.sort(comparator);
+    sorted.forEach(e =>
+        document.querySelector("#projectGallery").appendChild(e));
+}
+</script> {% endcomment %}
+
+<div class="oldprojectstuff">
 {% comment %} <section>
     <h2 id="SuperUROP-anchor">
         How Hummingbird Feathers Make Light Dance and Water Bounce
@@ -330,3 +360,4 @@ self: "projects"
         <img src="/images/jeopardyrulesscreen.png" alt="jeopardy rules screen">
     </figure>
 </section> {% endcomment %}
+</div>
