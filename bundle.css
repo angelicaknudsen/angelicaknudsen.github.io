@@ -218,6 +218,10 @@ section {
         aspect-ratio: 4/3 !important;
     }
 
+    .project-banner-title {
+        font-size: 2em !important;
+    }
+
 
 }
 
@@ -643,8 +647,13 @@ html {
     background-position: center;
     background-color: white;
     background-size: 150%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
     border-radius: 20px;
+    box-shadow: inset 0 0 0 1px rgb(0, 0, 0);
     /* box-shadow: 0px 0px 10px #2f2f2f; */
+    overflow: hidden;
 }
 
 .project-banner .backdrop {
@@ -654,19 +663,16 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     backdrop-filter: brightness(0.2) blur(5px);
-    border-style: solid;
-    border-width: medium;
-    border-color: rgb(0, 0, 0);
-    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .project-banner h1 {
     width: 80%;
 }
 
-.project-gallery .gallery-image {
+.project-gallery .projectIndex {
     width: 100%;
     height: 100%;
     background-color: white;
@@ -683,6 +689,10 @@ html {
     border-radius: 10px;
     box-shadow: inset 0 0 0 1px rgb(0, 0, 0);
 }
+
+/* .project-banner-title {
+    font-size: max(2.5em, 80%);
+} */
 
 .project-gallery {
     /* display: flex;
