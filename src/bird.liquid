@@ -1,0 +1,28 @@
+---
+title: "Bird"
+layout: "subpage.njk"
+self: "bird"
+---
+
+<h1>
+    {{ title }}
+</h1>
+
+<p>
+    Can you tell that I like birds?
+</p>
+<p></p>
+
+<div class='project-gallery' id="projectGallery">
+    {% for bird in collections.birds reversed %}
+        <div class="projectIndex" data-projectindex="{{ bird.data.projectIndex }}" style="background-image: url('{{ bird.data.image }}')">
+            <a href="{{ bird.url }}">
+                <div class="backdrop">
+                    <p>
+                        {{ bird.data.title }}
+                    </p>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>

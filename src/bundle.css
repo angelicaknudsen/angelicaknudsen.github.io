@@ -1,5 +1,5 @@
 *:focus {
-    border: white;
+    box-shadow: inset 0px 0px 0px 1px rgba(148, 148, 148, 0.482);
 }
 
 body {
@@ -307,9 +307,13 @@ section {
 }
 
 .billy a {
-    float: none;
     margin-left: 0px;
     transition: 0.3s;
+    overflow: hidden;
+}
+
+.billy:has(a:focus) {
+    box-shadow: inset 0px 0px 0px 3px rgba(255, 255, 255, 0.482);
 }
 
 
@@ -381,7 +385,6 @@ html {
 
 .expand-menu {
     display: flex;
-    color: rgb(150, 150, 150);
     gap: 5px;
     padding: 5px;
     border-radius: 10px;
@@ -407,12 +410,45 @@ html {
     transition: 0.3s transform;
 }
 
-.expand-menu:hover {
+/* .expand-menu:hover {
     color: rgb(255, 255, 255);
+} */
+
+.dropdown-menu:hover{
+    color: white;
 }
 
-#expand-toggle:checked ~ #expand-btn .expand-menu {
-    /* transform: rotate(180deg); */
+.dropdown-menu:hover .menu-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu:has(a:focus) .menu-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu:has(a:focus) .menu-sublinks-holder .menu-sublinks {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.dropdown-menu:has(a:focus) .menu-sublinks-holder{
+    height: auto;
+    border-top: 1px solid rgb(150, 150, 150);
+    box-shadow: 0px 0px 10px #1b1b1b;
+}
+
+.dropdown-menu:hover .menu-sublinks-holder .menu-sublinks {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.dropdown-menu:hover .menu-sublinks-holder{
+    height: auto;
+    border-top: 1px solid rgb(150, 150, 150);
+    box-shadow: 0px 0px 10px #1b1b1b;
+}
+
+/* #expand-toggle:checked ~ #expand-btn .expand-menu {
     color: rgb(255, 255, 255);
 }
 
@@ -423,14 +459,13 @@ html {
 #expand-toggle:checked ~ #expand-btn ~ .menu-sublinks-holder .menu-sublinks {
     transform: translate(0px, 0px);
     opacity: 1;
-    /* border: 1px solid #1b1b1b; */
 }
 
 #expand-toggle:checked ~ #expand-btn ~ .menu-sublinks-holder{
     height: auto;
     border-top: 1px solid rgb(150, 150, 150);
     box-shadow: 0px 0px 10px #1b1b1b;
-}
+} */
 
 .menu-sublinks-holder {
     position: absolute;
@@ -451,6 +486,7 @@ html {
     transition-delay: 1s;
     transition-property: height;
     transition: 0.3s;
+    width: 100%;
     z-index: 1;
 }
 

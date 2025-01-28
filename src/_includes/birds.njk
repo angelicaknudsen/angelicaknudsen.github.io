@@ -1,0 +1,24 @@
+---
+layout: "base.njk"
+permalink: "/bird/{{ self }}/"
+---
+
+<div class='top-layout'>
+    <a href="/">home</a> /
+    <a href="/bird">bird</a> /
+    <a href="/bird/{{ self }}">{{ self }}</a>
+</div>
+
+<div class="project-banner" style='background-image: url("{{ image }}")'>
+    <div class='backdrop'>
+        <h1 class="project-banner-title">
+        {{ title }}
+        </h1>
+    </div>
+</div>
+
+<p class="date">
+   {{ timeline }}
+</p>
+
+{{ content | safe }}
