@@ -1,15 +1,15 @@
 ---
 layout: "base.njk"
-permalink: "/bird/{{ self }}/"
+permalink: "/birds/{{ self }}/"
 ---
 
 <div class='top-layout'>
     <a href="/">home</a> /
-    <a href="/bird">bird</a> /
-    <a href="/bird/{{ self }}">{{ self }}</a>
+    <a href="/birds">birds</a> /
+    <a href="/birds/{{ self }}">{{ self }}</a>
 </div>
 
-<div class="project-banner" style='background-image: url("{{ image }}")'>
+<div class="project-banner" style='background-image: url("/images/birdies/{{ self }}/{{ image }}")'>
     <div class='backdrop'>
         <h1 class="project-banner-title">
         {{ title }}
@@ -18,7 +18,33 @@ permalink: "/bird/{{ self }}/"
 </div>
 
 <p class="date">
-   {{ timeline }}
+   Image header credit <a href="{{ headerbirdcred }}">🔗</a>
+</p>
+
+<p>
+    For more thorough bird information, reference <a href="https://www.allaboutbirds.org/news/">All About Birds</a>, which is what I used for providing the following info.
+</p>
+
+<p>
+
+</p>
+
+<p>
+    Necessary <b>{{ self }}</b> facts:
+    <ul>
+        <li>
+            Common Name: {{ title }}
+        </li>
+        <li>
+            Scientific Name: <i>{{ sciname }}</i>
+        </li>
+        <li>
+            Order: {{ order }}
+        </li>
+        <li>
+            Family: {{ family }}
+        </li>
+    </ul>
 </p>
 
 {{ content | safe }}

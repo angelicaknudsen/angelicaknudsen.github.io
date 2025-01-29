@@ -62,7 +62,7 @@ self: "projects"
 <div class='project-gallery' id="projectGallery">
 
     {% for project in collections.projects reversed %}
-        <div class="projectIndex" data-projectindex="{{ project.data.projectIndex }}" style="background-image: url('{{ project.data.image }}')">
+        <div class="projectIndex" data-projectindex="{{ project.data.projectIndex }}" title="{{ project.data.title }}" style="background-image: url('{{ project.data.image }}')">
             <a href="{{ project.url }}">
                 <div class="backdrop">
                     <p>
