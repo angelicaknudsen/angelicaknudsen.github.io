@@ -266,6 +266,10 @@ section {
         border-top: 1px solid rgb(150, 150, 150);
         box-shadow: 0px 0px 10px #1b1b1b;
     }
+
+    .all-birds-i-know {
+        grid-template-columns: 1fr !important;
+    }
 }
 
 /* Change the color of links on hover */
