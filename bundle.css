@@ -862,7 +862,7 @@ figcaption div {
     line-height: 50px;
     text-align: center;
     border-radius: 100%;
-    background-color: rgba(30, 30, 30, 0.5);
+    background-color: rgb(30, 30, 30, 0.7);
     font-size: 1.5ch;
     font-weight: bold;
     color: #777;
@@ -873,10 +873,10 @@ figcaption div {
 }
 
 .scrollTopBottom:hover {
-    background-color: rgba(50, 50, 50, 0.5);
+    background-color: rgba(50, 50, 50, 0.7);
 }
 
 .scrollTopBottom div {
     position: relative;
-    /* transform: translateY(0px); */
+    transform: rotate(-90deg) translateX(-1px);
 }
