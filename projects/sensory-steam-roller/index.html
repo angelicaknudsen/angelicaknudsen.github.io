@@ -80,20 +80,7 @@
 
   <!-- -->
   <div class="content">
-    <!-- 
-    <header class="header container">
-    <h1 class="header__title">
-      <a href="/">Angelica Knudsen</a>
-    </h1>
-    <ul class="header__links">
-      <li>
-        <a class="header__link" href="/resume">Resume</a>
-      </li>
-      <li>
-        <a class="header__link" href="/projects">Projects</a>
-      </li>
-    </ul>
-    </header> -->
+
     <main class="main container">
       
 <div class='top-layout'>
@@ -235,5 +222,34 @@
             </p>
         </div>
     </div>
+
+    <div>
+        <a href="#" onclick="document.body.scrollTop=0;document.documentElement.scrollTop=0;event.preventDefault()">
+            <div class='scrollTopBottom' id='scrollTopBottom'>
+                <div>
+                    🛆
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        let timerState = -1;
+        window.addEventListener('scroll', function() {
+            const s = document.getElementById('scrollTopBottom') 
+            clearTimeout(timerState)
+            console.log(window.scrollY)
+            if (window.scrollY > 300) {
+                s.style.display = 'unset';
+                s.style.opacity = '1';
+            } else {
+                s.style.display = 'unset';
+                s.style.opacity = '0';
+                timerState = setTimeout(function(){
+                    s.style.display = 'none';
+                },500)
+            }
+        });
+    </script>
 </body>
 </html>
