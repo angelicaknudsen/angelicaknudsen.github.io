@@ -9,6 +9,9 @@ permalink: "/birds/{{ self }}/"
     <a href="/birds/{{ self }}">{{ self }}</a>
 </div>
 
+<div style="display: none;">
+</div>
+
 <div class="project-banner" style='background-image: url("/images/birdies/{{ self }}/{{ image }}")'>
     <div class='backdrop'>
         <h1 class="project-banner-title">
@@ -48,3 +51,31 @@ permalink: "/birds/{{ self }}/"
 </p>
 
 {{ content | safe }}
+
+{% set previousBird = collections.birds | getPreviousCollectionItem(page) %}
+{% set nextBird = collections.birds | getNextCollectionItem(page) %}
+
+<div>
+    <h3>
+        See more
+    </h3>
+    <ul>
+        {% if nextBird %}
+        <li>
+            Next:
+            <a href="{{ nextBird.url }}">
+                {{ nextBird.data.title }}
+            </a>
+        </li>
+        {% endif %}
+
+        {% if previousBird %}
+        <li>
+            Previous:
+            <a href="{{ previousBird.url }}">
+                {{ previousBird.data.title }}
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+</div>

@@ -16,7 +16,7 @@ permalink: "/birds/"
 
 <div class='project-gallery' id="projectGallery">
     {% for bird in collections.birds reversed %}
-        <div class="projectIndex" data-projectindex="{{ bird.data.birdindex }}" title="{{ bird.data.title }}" style="background-image: url('/images/birdies/{{ bird.data.self }}/{{ bird.data.image }}')">
+        <div class="birdIndex" id="birdIndex{{ bird.data.birdindex }}" data-birdindex="{{ bird.data.birdindex }}" title="{{ bird.data.title }}" style="background-image: url('/images/birdies/{{ bird.data.self }}/{{ bird.data.image }}')">
             <a href="{{ bird.url }}">
                 <div class="backdrop">
                     <p>

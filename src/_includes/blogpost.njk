@@ -10,3 +10,32 @@ permalink: "/blog/{{ self }}/"
 </div>
 
 {{ content | safe }}
+
+{% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+{% set nextPost = collections.posts | getNextCollectionItem(page) %}
+
+<div>
+    <h3>
+        See more
+    </h3>
+    <ul>
+        {% if nextPost %}
+        <li>
+            Next:
+            <a href="{{ nextPost.url }}">
+                {{ nextPost.data.title }}
+            </a>
+        </li>
+        {% endif %}
+
+        {% if previousPost %}
+        <li>
+            Previous:
+            <a href="{{ previousPost.url }}">
+                {{ previousPost.data.title }}
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+</div>
+
