@@ -839,3 +839,10 @@ figcaption div {
 .bird-gallery img {
     border-radius: 20px;
 }
+
+.all-birds-i-know {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 5px;
+    gap: 5px;
+}
