@@ -15,4 +15,5 @@ function SortData() {
         document.querySelector("#projectGallery").appendChild(e));
 }
 
+
 SortData()
