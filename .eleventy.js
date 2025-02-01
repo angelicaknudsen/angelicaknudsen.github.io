@@ -4,6 +4,8 @@ module.exports = function (eleventyConfig) {
   /*eleventyConfig.addPassthroughCopy({ "/src/favicons": "/" });*/
   eleventyConfig.addPassthroughCopy("src/bundle.css");
   eleventyConfig.addPassthroughCopy("src/script.js");
+  eleventyConfig.addPassthroughCopy("src/birds.csv");
+  eleventyConfig.addPassthroughCopy('src/.birds')
 
   return {
     dir: {
