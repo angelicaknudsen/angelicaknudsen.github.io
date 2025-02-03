@@ -46,25 +46,11 @@ layout: "base.njk"
 
 </div>
 
-<h2>
-    Latest Blog Post
-</h2>
 <div class="blog-links">
-    {% comment %} {% for post in collections.posts reversed offset %}
-        <a href="{{ post.url }}">
-            <section>
-                <h3>
-                    {{ post.data.title }}
-                </h3>
-                <dd>
-                    {{ post.data.descriptor }}
-                </dd>
-                <p>
-                    Updated: {{ post.data.date | date: "%m/%d/%Y" }}
-                </p>
-            </section>
-        </a>
-    {% endfor %} {% endcomment %}
+
+    <h2>
+        Latest Blog Post
+    </h2>
 
     {% assign lastPost = collections.posts.last %}
 
@@ -89,4 +75,4 @@ layout: "base.njk"
     <a href="blog/" style="width: 110px">
         Read more
     </a>
-</div>
+    </div>
