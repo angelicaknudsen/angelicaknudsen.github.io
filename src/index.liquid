@@ -46,11 +46,10 @@ layout: "base.njk"
 
 </div>
 
+<h2>
+    Latest Blog Post
+</h2>
 <div class="blog-links">
-    <h2>
-        Latest Blog Post
-    </h2>
-
     {% comment %} {% for post in collections.posts reversed offset %}
         <a href="{{ post.url }}">
             <section>
@@ -90,5 +89,4 @@ layout: "base.njk"
     <a href="blog/" style="width: 110px">
         Read more
     </a>
-
 </div>
