@@ -68,24 +68,27 @@ layout: "base.njk"
     {% endfor %} {% endcomment %}
 
     {% assign lastPost = collections.posts.last %}
+
     <a href="{{ lastPost.url }}">
             <section>
-                <h3>
-                    {{ lastPost.data.title }}
-                </h3>
-                <dd>
-                    {{ lastPost.data.descriptor }}
-                </dd>
-                <p>
-                    Updated: {{ lastPost.data.date | date: "%m/%d/%Y" }}
-                </p>
+                <div class="blogpost-backdrop">
+                    <h3>
+                        {{ lastPost.data.title }}
+                    </h3>
+                    <dd>
+                        {{ lastPost.data.descriptor }}
+                    </dd>
+                    <p>
+                        Updated: {{ lastPost.data.displayDate }}
+                    </p>
+                </div>
+                <div style="background-image: url('{{ lastPost.data.bannerImage }}')" title="{{ lastPost.data.imageTitle }}">
+                </div>
             </section>
     </a>
 
     <a href="blog/" style="width: 110px">
-        <section>
-            Read more
-        </section>
+        Read more
     </a>
 
 </div>

@@ -12,41 +12,28 @@ self: "blog"
     I have big thoughts.
 </p>
 
-
+<h2>
+    Posts
+</h2>
 <div class="blog-links">
-    <h2>
-        Posts
-    </h2>
-
-    <!--
-    <a href="the-issue-with-carbon-capture-technology/">
-        <section>
-            <h3>
-                The Issue with Carbon Capture Technology
-            </h3>
-
-            <dd>
-                Entropy is a very real thing.
-            </dd>
-
-            <p>
-                Updated: WIP
-            </p>
-        </section>
-    </a>-->
 
     {% for post in collections.posts reversed %}
         <a href="{{ post.url }}">
             <section>
-                <h3>
-                    {{ post.data.title }}
-                </h3>
-                <dd>
-                    {{ post.data.descriptor }}
-                </dd>
-                <p>
-                    Updated: {{ post.data.date | date: "%m/%d/%Y" }}
-                </p>
+                <div class="blogpost-backdrop">
+                    <h3>
+                        {{ post.data.title }}
+                    </h3>
+                    <dd>
+                        {{ post.data.descriptor }}
+                    </dd>
+                    <p>
+                        Updated: {{ post.data.displayDate }}
+                    </p>
+                </div>
+                <div style="background-image: url('{{ post.data.bannerImage }}')" title="{{ post.data.imageTitle }}">
+                    {% comment %} <img src="{{ post.data.bannerImage }}" alt=""> {% endcomment %}
+                </div>
             </section>
         </a>
     {% endfor %}

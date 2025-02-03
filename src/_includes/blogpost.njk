@@ -9,12 +9,25 @@ permalink: "/blog/{{ self }}/"
     <a href="/blog/{{ self }}">{{ self }}</a>
 </div>
 
+
+<div class='project-banner' style='background-image: url("{{ bannerImage }}")'>
+    <div class = 'backdrop'>
+        <h1>
+            {{ title }}
+        </h1>
+    </div>
+</div>
+
+<p class="date">
+   Date: {{ displayDate }}
+</p>
+
 {{ content | safe }}
 
 {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
 {% set nextPost = collections.posts | getNextCollectionItem(page) %}
 
-<div>
+<div class = 'seeMore'>
     <h3>
         See more
     </h3>
