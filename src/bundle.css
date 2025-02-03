@@ -836,8 +836,6 @@ figcaption div {
 
 
     .billy {
-        margin-left: auto;
-        margin-right: auto;
         float: left;
         width: 120px;
     }
@@ -924,5 +922,6 @@ figcaption div {
 
     .blog-links section {
         grid-template-columns: 1fr 1fr;
+        height: 250px;
     }
 }
