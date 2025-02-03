@@ -799,13 +799,8 @@ figcaption div {
 }
 
 .blogpost-backdrop {
-    backdrop-filter: brightness(0.5);
     height: 100%;
     padding: 10px;
-}
-
-.blog-links section:hover .blogpost-backdrop {
-    backdrop-filter: brightness(0.4);
 }
 
 .seeMore {
@@ -921,7 +916,17 @@ figcaption div {
     }
 
     .blog-links section {
-        grid-template-columns: 1fr 1fr;
-        height: 250px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr 1fr;
+        height: auto;
+    }
+
+    .blog-links .blogpost-backdrop {
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .blog-links .background-image {
+        box-shadow: 0px 0px 10px #1b1b1b;
     }
 }
