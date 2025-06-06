@@ -1,0 +1,113 @@
+---
+title: "2025 CWC Wind Turbine"
+layout: "projects.njk"
+timeline: "Timeline: Jan-May 2025"
+image: "/images/cwc-2025/turbinecropped.jpg"
+self: "2025-cwc-wind-turbine"
+projectIndex: "9"
+date: 2025-06-05
+---
+
+<script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      }
+    };
+</script>
+<script id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<div class="portfolio-base">
+        <div class="project-left-side">
+            <div class="objective">
+            <h3>
+                Objective
+            </h3>
+        
+            <p>
+                This project was done as part of MIT Wind, a competitor in the US Department of Energy's 2025 Collegiate Wind Competition. The competition had four main components that contributed to your team's overall score: turbine design, turbine testing, connection creation, and project development. MIT Wind had primarily two teams, build and project development, where the build team worked on the turbine design and testing, and the project development focused on (of course) project development as well as connection creation.
+            </p>
+
+        </div>
+    
+        <div class="outcomes">
+            <h3>
+                Outcomes & Contributions
+            </h3>
+
+            <p>
+                 As a member of the mechanical subteam of MIT Wind, I largely worked on the foundation.
+                 <ul>
+                    <li>
+                        We opted for 6" inner-diameter PVC as the main foundation material to fit our spar-buoy design
+                    </li>
+                    <li>Pre-competition, for stability, we used 6" diameter foam in the upper portion for buoyancy; we left the middle portion flooded; and for the ballast, we used 6" diameter steel discs placed as low as possible to ensure that our center of gravity was as below the center of buoyancy as possible for optimal stability.
+
+                        <div class="project-images">
+                            <figure>
+                            <img src="/images/cwc-2025/turbinefbd.png" alt="FBDs of floating turbine">
+                            <img src="/images/cwc-2025/turbinetiltedfbd.png" alt="">
+                            <figcaption style="text-align: center">Figure 1: free-body diagrams of the turbine</figcaption>
+                            </figure>
+                        </div>
+                    </li>
+                    <li>
+                        We created a model for the oscillatory behavior of the foundation
+
+                        The equation of motion we derived for the turbine was:
+                        $$\ddot \theta + \frac{\rho C_d D L^4}{8 I_{sys}} \dot \theta |\dot \theta| + \frac{F_b L sin(\theta)}{I_{sys}} = 0 \text{,}$$
+
+                        where $I_{sys}$ is the moment of inertia of the system, $D$ is the diameter of the PVC tube, $L$ is the length of the submerged portion of the buoy, $F_b$ is the buoyancy force, $\rho$ is the density of water, and $C_d$ is the coefficient of drag, approximated from the cylindrical geometry of the submerged PVC tube. $I_{sys}$ is 0.9625 kg-m<sup>2</sup>. $C_d$ was estimated to be 1.1.
+
+                        <br><br>
+
+                        Since this equation can't be solved analytically, we used MATLAB's ode45 to solve it numerically. The graph is pictured below.
+                        <div class="project-images">
+                            <figure>
+                            <img src="/images/cwc-2025/buoybehavior.png" alt="model of turbine oscillations">
+                            <figcaption style="text-align: justify">Figure 2: model of the oscillatory behavior of the foundation. From this, we know that the turbine would be more stable with more damping</figcaption>
+                            </figure>
+                        </div>
+                    </li>
+                    <li>
+                        We developed an idea for fins inspired by SpaceX fins to increase damping; grid-style fins were used to prioritize viscous drag, which is more predictable than form drag
+                    </li>
+                    <li>
+                        We designed what we called the "puck," which connects the base flange of the steel tube tower to the top of the PVC
+                    </li>
+                    <li>
+                        I designed an attachment to connect a linear actuator to the pitch control of the blades, made using laser cut acrylic pieces and a linear ball bearing. The linear ball bearing was used to reduce the linear friction that would lead to the pitch control getting stuck, but it ended up being a mistake, as it greatly increased the rotational friction of the turbine, leading to the overall attachment's removal in the final test at the official competition
+                    </li>
+                    <li>
+                        At the competition, we found that there still was not enough buoyancy and that the center of buoyancy was also not high enough, so we bought pool noodles and wrapped them around the top of the foundation. This significantly increased the stability of the turbine. Also, we added a set of mooring lines near the top of the foundation to prevent tipping. This was very effective, as our turbine managed to not tip past 15&deg after our final test, enabling us to pass all foundation-related scoring at the competition.
+
+
+                        <div class="project-images">
+                    <figure>
+                        <img src="/images/cwc-2025/entireturbinesideview.jpg" alt="overall turbine side view">
+                        <img src="/images/cwc-2025/entireturbineangledview.jpg" alt="overall turbine angled view">
+                            <figcaption style="text-align: center">Figure 3: entire turbine assembly</figcaption>
+                    </figure>
+                </div>
+
+                    </li>
+                 </ul>
+            </p>
+        </div>
+    
+        <div class="technical">
+            <h3>
+                Technical Details & Skills
+            </h3>
+            <p>
+                Manufacturing: Lathe, Drill Press, Bandsaw, Handsaw/Hacksaw, 3D printing, soldering
+            </p>
+            <p>
+                Languages: MATLAB, C++ (for Arduino)
+            </p>
+        </div>
+
+    </div>
+</div>
