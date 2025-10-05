@@ -1,0 +1,282 @@
+---
+title: "Attempting to build a generator - part 1"
+bannerImage: "/images/leucisticpig.jpg"
+imageTitle: 'generator time'
+self: "attempting-to-build-a-generator-part-1"
+descriptor: "spooky"
+layout: "blogpost.njk"
+date: 2025-10-5
+displayDate: "07/30/2025"
+
+intro: "Oh no"
+point1: "Basic science"
+point2: "Designing our own generator"
+point3: "CAD time"
+point4: "Building"
+conc: "Sending this off for now"
+---
+
+<section>
+<h3>
+    TABLE OF CONTENTS
+</h3>
+
+<ol>
+    <li>
+        <a href="#intro">{{ intro }}</a>
+    </li>
+    <li>
+        <a href="#p1">{{ point1 }}</a>
+    </li>
+    <li>
+        <a href="#p2">{{ point2 }}</a>
+    </li>
+    <li>
+        <a href="#p3">{{ point3 }}</a>
+    </li>
+    <li>
+        <a href="#p4">{{ point4 }}</a>
+    </li>
+    <li>
+        <a href="#Conc">{{ conc }}</a>
+    </li>
+</ol>
+</section>
+
+<section>
+<h3 id="intro">
+    {{ intro }}
+</h3>
+
+<div class="blog-text">
+    <p>
+    Hi! If you read my <a href="/blog/my-time-at-the-2025-cwc-competition">previous blog post</a>, you would have seen me proudly announce my interest in building a custom generator. Current me loathes past me for letting my hubris utter these words. If I am being honest, I am a bit in over my head. However, I should at least try since my future career (hopefully smth in sustainable energy, trains, cool stuff, etc.) depends on me having somewhat of a grasp on magnetics.
+    </p>
+</div>
+
+</section>
+
+<section>
+<h3 id="p1">
+    {{ point1 }}
+</h3>
+
+<div class="blog-text">
+    <p>
+        The reason why I thought building a generator wouldn't be so bad is because in principle, it is quite uncomplicated.
+    </p>
+
+    <p>
+        The purpose of a generator is to convert mechanical power to electrical power (opposite of a motor). To do this, you rely on Faraday's law:
+        $$ \varepsilon = -N \frac{d\Phi}{dt} \text{,}$$
+
+        where $\varepsilon$ is the induced electromotive force (EMF) or induced voltage, $N$ is the number of turns in the circuit, and $\frac{d\Phi}{dt}$ is the change in magnetic flux over time.
+    </p>
+
+    <p>
+        This equation describes how a change in magnetic flux will induce voltage in a circuit. The negative sign arises from the fact that a circuit will resist change in a magnetic field, known as Lenz's law, so an increasing magnetic flux will induce a current with an opposing magnetic field, and vice versa. I like to reconcile this with the idea that systems generally resist change; we see this a lot in mechanical systems, where objects resist changes in velocity.
+    </p>
+
+    <div class="bird-gallery">
+
+         <section style="align-content: center; justify-content: center">
+            <img style="width: 80cw" src="/images/generator/image1.jpg" alt="faraday's law">
+            <p>
+                As the magnetic field moves right, the magnetic flux in the circuit will increase, leading to an induced current with an opposing magnetic field.
+            </p>
+        </section>
+    </div>
+
+    <p>
+        Faraday's law dictates the design for the two main components of a generator: the stator and rotor. The stator is the stationary component of a generator equipped with a bunch of wire coils. You want to pack in as many turns as possible since according to Faraday's law, more turns lead to more voltage.
+
+        The spinning part of a generator is called the rotor. It is equipped with magnets with a magnetic field perpendicular to the coils, and you alternate the magnets with opposite polarities to change the magnetic flux as you spin the rotor.
+    </p>
+
+    <div class="bird-gallery">
+         <section style="align-content: center; justify-content: center">
+            <img style="width: 80cw" src="/images/generator/image2.png" alt="generator">
+            <p>
+                Top view of generator showcasing the stator and rotor. This generator specifically is a radial flux generator, but there are different types, such as the axial flux generator.
+            </p>
+        </section>
+    </div>
+
+    <p>
+        From what I've seen, the exact ratio of number of magnets to coils depends on your design, which can be 1:1*, 2:1, 4:3, etc. (*generally, you don't want a 1:1 ratio though, so sorry that my drawing didn't take this into account). <a href="https://scoraigwind.co.uk/2012/12/3-phase-stator-visualisation/">This</a> source says that a ratio of 12 magnets to 9 coils produces a clean three-phase output, so I'll be going with this. Why three-phase? It's to keep the system more power efficient. This is because the induced voltage coming from a generator will always be alternating current (AC) since the magnetic flux will be rapidly changing from one direction to the other, and from the graph below, a one-phase generator's induced current will end up looking like a sine wave.
+    </p>
+
+    <div class="bird-gallery">
+         <section style="align-content: center; justify-content: center">
+            <img style="width: 80cw" src="/images/generator/image3.png" alt="one phase">
+        </section>
+    </div>
+
+    <p>
+        A three-phase generator minimizes power losses by maintaining a more consistent amount of current/voltage, as pictured below, with no periods of zero current. You accomplish this by having the number of coils be an integer multiple of three, which allows you to stagger three sets of voltage by 120&deg.
+    </p>
+
+    <div class="bird-gallery">
+         <section style="align-content: center; justify-content: center">
+            <img style="width: 80cw" src="/images/generator/image4.png" alt="three phase">
+        </section>
+    </div>
+
+    <p>
+        Even after all of this, YOU ARE NOT DONE! You will need a full-wave (bridge) rectifier to convert AC to DC. It is necessary so that the current/voltage stays unidirectional, which is what we can actually use for energy. I'm lazy, so I will not be drawing this out, but <a href="https://www.electronics-tutorials.ws/diode/diode_6.html">here</a> is a good resource on understanding how a basic rectifier works. You should throw in a capacitor to smoothen the voltage across the load.
+    </p>
+
+    <p>
+        There are some other things to keep in mind. For radial flux generators, you want the coils wrapped around iron cores to help minimize the air gap (open space between stator and rotor), as bigger air gaps reduce efficiency. Iron cores also help with concentrating the magnetic flux. Additionally, steel is a good material for the stator and rotor since it helps increase magnetic permeability. However, this comes at a cost: <a href="https://en.wikipedia.org/wiki/Eddy_current">eddy currents</a>. To minimize eddy currents and therefore overheating and power losses, good generators have stators and rotors made from a bunch of stacked laminated electrical steel sheets, which are insulated from each other and are oriented to minimize the surface area available to eddy currents. My understanding is that these things aren't cheap, and you need hundreds of layers, so I am unsure if I will actually be able to get my hands on these. However, they're often thin enough that you can just laser cut them, so we'll see.
+    </p>
+</div>
+</section>
+
+<section>
+<h3 id="p2">
+    {{ point2 }}
+</h3>
+
+<div class="blog-text">
+    <p>
+        Now onto finally designing our own generator!
+    </p>
+
+    <p>
+        For some constraints, I used the <a href="https://docs.nrel.gov/docs/fy24osti/90855.pdf">2024-2025 CWC Rulebook</a> for suggested specifications. 
+    </p>
+
+    <p>
+        The max allowed voltage for the load is 48 volts, and the turbine+rotor system must fit within a 45x45x45 cm cube. Using this, we know that the max acceptable swept area (area that turbine blades "sweep") is going to be 0.45 m in diameter or 0.159 m<sup>2</sup>.
+    </p>
+
+    <p>
+        I found this absolute <a href="https://www.ijert.org/research/assessment-of-power-coefficient-of-an-offline-wind-turbine-generator-system-IJERTV2IS90929.pdf">gold mine</a> of a resource on where to continue. We:
+        <ol>
+            <li>
+                use the equation for kinetic energy, $\frac{1}{2} m v^2$
+            </li>
+            <li>
+                rewrite the mass of air to be $\rho_a \Delta t v A $ ($ \rho_a $ is the density of air, ~1.225 kg/m<sup>3</sup>, $ \Delta t v $ is an arbitrary distance, and $A$ is the swept area we're considering)
+            </li>
+            <li>
+                plug in this new mass and take the time derivative (rewrite to where we get $\frac{\Delta KE}{\Delta t} = P_w$) to get the wind power, $P_{w} = \frac{1}{2} \rho_a A v^3$
+            </li>
+            The max harvestable mechanical power is defined as $P_m$ equal to $C_p P_w$, where $C_p$ is a function of the tip speed ratio and angle of the blades, with a $C_{p_{max}}$ of 16/27 = 0.593. Realistically, the actual conversion will be even lower, with a range between 0.30 to 0.42.
+            <li>
+                Therefore, we can rewrite $P_m = \frac{1}{2} \rho_a A v^3 C_p$
+            </li>
+            <li>
+                We know that the competition will have an upper wind speed limit, $v$ = 15 m/s, density of air $\rho_a$ = 1.225 kg/m<sup>3</sup>, swept area $A$ = 0.159 m<sup>2</sup>, and assuming a $C_p$ range of 0.3 to 0.42, the expected maximum mechanical power the generator must handle will be 98 - 138 Watts (W). I'm just going to use 98 W.
+            </li>
+
+            We could have jumped right into using the equation for $P_m$, but I think it is fun looking into the derivation.
+        </ol>
+    </p>
+
+    <p>
+        Since the voltage of the load must remain at or below 48 volts, and we know the generator must handle at max 98 W, we can use the equation for calculating power, $IV = P$ ($I$ = current, $V$ = voltage, $P$ = power), to determine how many amps the generator must endure, which can then be used to determine the proper gauge of wire.
+    </p>
+
+    <p>
+        Using this, we find that $I$ = 98/48 A = ~2 A. Using <a href="https://www.powerstream.com/Wire_Size.htm">this</a> chart, we find that we can go as thin as 26 gauge, but I am going to go with 24 gauge so that we have a safety factor of 1.75 (kind of arbitrary lmao). It seems that determining the proper wire gauge is a balance between making sure that the wire is thin enough to get in enough turns for the coils, but not too thin such that too much current will overheat the wires, possibly melting the insulation and shortcircuiting the coils, therefore ruining the generator.
+    </p>
+
+    <p>
+       To keep the output voltage at 48 V, we need to calculate the total resistance necessary for the load. According to that same chart, the ohms (&Omega;) per 1000 ft is 25.67 for the 24 gauge wire, and I'm going to estimate that we'll be using perhaps 100 ft, which would lead to just 2.57 &Omega; from the coils. We can relate $\frac{V^2}{R} = P$ ($V$ = Volts, $R$ = resistance, $P$ = power) to find the total resistance, where we find that the total resistance for the load must be 48<sup>2</sup>/98 = 23.5 &Omega;. We'll keep the resistance at ~28 &Omega; in total since I'll just be getting a 25 &Omega; resistor (23 seems more annoying). Since the resistance is so low, you'll notice that you can get resistors of this same resistance but with different power ratings, so I'll of course be getting one rated for 100 W (like <a href="https://www.digikey.com/en/products/detail/ohmite/HS100-25R-F/5307091?gad_source=1&gad_campaignid=20232005509&gbraid=0AAAAADrbLlisa_ZbR793C7vvZ3qKcM8HU&gclid=Cj0KCQjw4qHEBhCDARIsALYKFNPbQNhwepM6K6B4R40vVbkgqOVDZGQUOwYgyUn984T3V927N3qcLlIaAqSjEALw_wcB&gclsrc=aw.ds">this</a> one). These guys are also really chonky, which makes sense since they need to be good at handling heat. Last year in Wind Team, we had some of these guys screwed onto an aluminum sheet to aid in heat dissipation.
+    </p>
+
+    <p>
+        After some more digging, there is another thing to possibly consider: <a href="http://davidsonsales.com/public/pdfs/CoilPitch.pdf">pitch factor</a>. You use this to find how many slots the coils should wrap around, and you calculate this using the number of available slots in your stator (for mine, it will be 18, with 9 coils), the number of poles in the stator (mine has 12 magnets, so 6 poles?*[WRONG]), and the number of slots that each coil will span. For smoother output, you generally want to avoid a pitch factor of exactly one, and it seems for most applications, you want a 2/3rd winding pitch. The way to calculate it is outlined in the above link (<a href="http://davidsonsales.com/public/pdfs/CoilPitch.pdf">here</a> again), but we will calculate ours this way: full pitch with 6 poles and 18 slots leads to 3 slots for a full pitch, so for 2/3rd pitch, we should just use 2 slots. I am unsure exactly how many turns we should get in, so I'll have to measure how much voltage is produced with just one turn of the wire to know what the optimal number of turns for the coils should be. (*This appears to be wrong, as the number of poles should be equal to the number of magnets, but many sources I have seen show that 9 coils for 12 magnets works, so I'm going with this.)
+    </p>
+
+    <p>
+        Now, I am quite lost on where to go from here. I ended up ordering a bunch of <a href="https://www.mcmaster.com/7588K77/">wire</a> from McMaster-Carr and some really strong <a href="https://www.kjmagnetics.com/bx082-n52-neodymium-block-magnet">magnets</a> from K&J Magnetics, Inc., so we'll see how well these will work. It is unfortunately outside of my budget to buy iron cores and a bunch of sheets of electrical steel, so I will be 3D-printing my stator and rotor (please don't come at me), and if my prototype works, I may be able to scrounge up some funding during the school year to make a more robust generator with the proper materials... assuming I have the time and energy. Neglected to mention this earlier, but it is also good practice to insert <a href="https://www.eis-inc.com/knowledge-center/articles/electric-motor-insulation#:~:text=The%20stamped%20steel%20stator%20has,as%20insulation%20into%20the%20slot.">insulation paper</a> in the stator slots as well as between each coil, as there is a possibility of the motor wire enamel wearing out and therefore grounding the windings and/or shorting the phases without proper insulation, which would ruin the entire generator. All of these things are making me reconsider whether building this is really worth it for anything, as there are much more productive things to be working on for the benefit of MIT Wind, so it probably will not even be worth building a generator that is inferior to one we already bought. I am confused how other teams managed to build one with success, so I should reach out to them.
+    </p>
+
+    <p>
+        I realized that I forgot about a crucial part of designing generators: finite element magnetics. It is a way to simulate the performance of your generator. Well, <a href="https://www.femm.info/wiki/HomePage">here</a> is the link to the software. I think I'm just going to try building something and go from there. Further iterations will require simulations.
+    </p>
+
+</div>
+</section>
+
+<section>
+<h3 id="p3">
+    {{ point3 }}
+</h3>
+
+<div class="blog-text">
+    <p>
+        It is finally time to CAD this baby.
+    </p>
+
+    <p>
+        All materials we'll be needing:
+        <ul>
+            <li>3D Printer and PLA - we'll be FDM 3D printing the base for the stator, rotor, and any other components that need to be very custom</li>
+            <li>1/4" and/or 1/8" Acrylic - laser cut as much as possible</li>
+            <li>1x Axle - to actually spin the generator</li>
+            <li>2x Bearings - for holding the axle of the generator</li>
+            <li>"Insulation Paper" - I will just be using normal paper for this prototype since actual insulation paper is kind of expensive</li>
+            <li>12 of the 1" x 0.5" x 0.125" N52 Magnets - choose whichever you think will work best</li>
+            <li>24 AWG Copper Wire - I was unsure of how much I needed, so I ordered over 700 ft.</li>
+        </ul>
+    </p>
+
+    <p>
+        I ordered 12 of the 1" x 0.5" x 0.125" N52 magnets with the magnetic flux flowing through the 1" x 0.5" face. I thought this would be a good starting point since I could possibly repurpose them for an axial flux generator. They are HELLA strong. You have to be very careful handling these things because they could probably injure you if you get your finger stuck between the magnets.
+    </p>
+
+    <p>
+        I'll be using SOLIDWORKS. I plan to CAD the stator and rotor as parts and then assemble them.
+    </p>
+    
+    <p>
+        I want this generator as compact as possible, minimizing the air gap. Some YouTube videos (here, here, and here) offer some insight into how to best design the stator and rotor, and <a href="https://www.youtube.com/watch?v=XRYSFalqe2U">this</a> video offers insight into how to load coils into the stator, which will help inform us of some design choices.
+    </p>
+
+    <p>
+        The slots for the stator must be rounded at the edges since otherwise, they may cut into the enamel of the motor wires, and we of course want the wires to stay insulated. I guess since it is hard to exactly figure out the proper depth necessary for the slots without knowing the number of turns we need, we should make the rotor first, and then somehow measure how much voltage one loop of wire generates. I bring this up since if the slots are too deep, the coils may not lay close enough to the magnets to get the best magnetic flux.
+    </p>
+
+    <p>
+        I like designing things to be as modular as possible so that things can be repurposed. This presents a challenge because many tutorials on how to build a rotor require that the magnets be permanently glued to the rotor, enabling the magnets to be as close to the stator coils as possible, but I want to avoid epoxying the magnets. I will have to accept that my generator will not be very optimal at all, but this should be okay since it will be my first attempt. I'm thinking that I will press-fit the magnets into a 3D printed rotor. I could laser cut the rotor using 1/4" acrylic, but acrylic does not tend to press fit very well. For securing the magnets, at first I thought to laser cut thin acrylic rings to position outside the magnets to keep them more contained, but I decided that I will use thread instead since it is thinner and will allow me to position the magnets closer to the coils. I may also laser cut acrylic discs to sandwich the magnets in more, but this may be overkill, so I will avoid doing this first.
+    </p>
+
+</div>
+</section>
+
+
+
+<section>
+<h3 id="p5">
+    {{ point5 }}
+</h3>
+
+<div class="blog-text">
+    <p>
+        We finally had the foundation ready for our final test, and we ended up passing all foundation related scoring! However, our turbine did not generate any power. We believed there may have been an open circuit since we did not feel any resistance from turning the generator, but electrical tested that it was not, so we're just unsure.
+    </p>
+
+    <p>
+        We asked the mentor from Cal Maritime about his thoughts on our design, and he said that we should simplify the circuit as much as possible. For instance, he did not really like how we were using a MOSFET as an adjustable resistor since it did not seem to be very reliable. Cal Maritime used a different method for adjusting the load  (I think they just used a bunch of different resistors), so maybe we can take inspiration from their design.
+    </p>
+
+    <p>
+        We received a lot of help from Rice students as well! They told us that the key to generating more power wasn't actually too dependent on the pitch of the blades but instead the load; we should look more into this. They also reassured us that we did pretty good for our first competition since we were a small team compared to all the other ones there.
+    </p>
+</div>
+</section>
+
+<section>
+<h3 id="Conc">
+    {{ conc }}
+</h3>
+
+<div class="blog-text">
+    <p>
+        The school year started, so I haven't had much time to work on my generator. For the second part, I will share my CADs, builds, and hopefully something that works.
+    </p>
+</div>
+</section>
