@@ -29,6 +29,14 @@ sup, sup a {
     line-height: 2px;
 }
 
+.blog-text a:has(sup) {
+    text-decoration: none;
+}
+
+sup{
+    text-decoration: none;
+}
+
 figcaption {
     text-align: center;
 }
@@ -66,7 +74,7 @@ dd {
 
 a {
     color: rgb(121, 215, 255);
-    text-decoration: none;
+    /* text-decoration: none; */
     transition: 0.3s color;
     font-size: 18px;
 }
@@ -157,7 +165,6 @@ section {
     color: rgb(85, 85, 85);
     text-align: center;
     padding: 10px 10px;
-    text-decoration: none;
 }
 
 .topnav .sublinks a {
@@ -166,7 +173,6 @@ section {
     color: rgb(150, 150, 150);
     text-align: center;
     padding: 5px 10px;
-    text-decoration: none;
     transition: 0.3s color;
 }
 
@@ -260,7 +266,6 @@ section {
 .billy:has(a:focus) {
     box-shadow: inset 0px 0px 0px 3px rgba(255, 255, 255, 0.482);
 }
-
 
 .billy a:hover {
     /* content: url('images/billy_hover.png'); */
@@ -518,8 +523,12 @@ html {
     color: rgb(255, 255, 255);
 }
 
+.blog-links a {
+    text-decoration: none;
+}
+
 .blog-links p {
-    color: rgb(150, 150, 150) !important;
+    color: rgb(150, 150, 150);
 }
 
 /* creating better about me */
