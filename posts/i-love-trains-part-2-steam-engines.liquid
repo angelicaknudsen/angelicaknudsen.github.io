@@ -1,0 +1,362 @@
+---
+title: "I love trains - part 2 - steam engines"
+self: "i-love-trains-part-2-steam-engines"
+descriptor: "steamy"
+layout: "blogpost.njk"
+date: 2025-11-21
+displayDate: "11/21/2025"
+bannerImage: "/images/steam/steamengine.jpg"
+imageTitle: 'steam engine locomotive'
+
+intro: "Introduction"
+point1: "Engine stuff"
+point2: "Steam locomotive models"
+point3: "Misc. fun facts"
+point4: "I'm tired"
+sources: "Sources"
+---
+
+
+{% comment %}
+List to of stuff:
+- rail design
+-rack railway
+- science behind maglev trains
+- superconductor stuff
+{% endcomment %}
+
+<section>
+    <h3>
+        TABLE OF CONTENTS
+    </h3>
+
+    <ol>
+        <li>
+            <a href="#{{ intro }}p2">{{ intro }}</a>
+        </li>
+        <li>
+            <a href="#{{ point1 }}p2">{{ point1 }}</a>
+        </li>
+        <li>
+            <a href="#{{ point2 }}p2">{{ point2 }}</a>
+        </li>
+        <li>
+            <a href="#{{ point3 }}p2">{{ point3 }}</a>
+        </li>
+        <li>
+            <a href="#{{ point4 }}p4">{{ point4 }}</a>
+        </li>
+    </ol>
+</section>
+
+<section>
+    <h3 id="{{ intro }}p2">
+        {{ intro }}
+    </h3>
+
+    <div class="blog-text">
+        <p>
+            Next up in the series is the steam engine!!!
+        </p>
+
+        <p>
+            I wanted to cover this since according to Start Pac, there are three primary types of locomotive: steam,
+            diesel, and electric.<a href="#s1"><sup>1</sup></a>, and my friends were interested in learning more about
+            diesel-electric locomotives. I think for a proper overview, we should look more into how the OG steam
+            engine worked and why diesel engines eventually overtook steam engines.
+        </p>
+    </div>
+</section>
+
+<section>
+    <h3 id="{{ point1 }}p2">
+        {{ point1 }}
+    </h3>
+
+    <div class="blog-text">
+        <p>
+            The main components behind a steam engine are <a href="#s2"><sup>2</sup></a><sup>, </sup><a
+                href="#s3"><sup>3</sup></a>:
+        </p>
+
+        <ol>
+            <li>Fire where coal burns</li>
+            <li>Boiler full of water that the fire heats to create steam</li>
+            <li>Cylinder and piston</li>
+            <li>Valves that control steam input and output</li>
+            <li>Series of rods and other mechanisms to turn wheels</li>
+        </ol>
+
+        <p>
+            The first steam engines were quite inefficient since they were single-action, which meant that the pistons
+            were powered only half the time. Double-action pistons were better since they had steam powering the pistons
+            during all parts of the cycle. Also, steam-powered locomotives usually had the pistons on either side of the
+            train that were slightly out of phase so that there was consistent power output.<a
+                href="#s3"><sup>3</sup></a>
+        </p>
+        <p></p>
+
+        <div style="display: flex; justify-content: center;">
+            <img style="width: 50%; box-shadow: 0px 0px 10px gray;" src="/images/trainspost/steamenginediagram.jpg"
+                alt="steam engine schematic">
+        </div>
+
+        <div class="caption">
+            Diagram of double-action steam engine.<a href="#s2"><sup>2</sup></a>
+        </div>
+
+        <div style="display: flex; justify-content: center; background-color: white; width: 50%; margin: auto;">
+            <img style="width: 100%; box-shadow: 0px 0px 10px gray;" src="/images/trainspost/steamengineanimation.gif"
+                alt="steam engine animation">
+        </div>
+
+        <div class="caption">
+            Steam engine animation that showcases the reversing lever, or the "Johnson Bar."<a
+                href="#s3"><sup>3</sup></a>
+        </div>
+
+        <p>
+            Now, really fun stuff: <b>cycles</b>.
+        </p>
+
+        <p>
+            Steam engines primarily used an "open-loop" version of the Rankine cycle, where the water is not condensed
+            back but instead released into the atmosphere. Shown below is the ideal, "closed-loop" Rankine cycle.<a
+                href="#s4"><sup>4</sup></a>
+        </p>
+
+        <table style="border-color: white;">
+            <tr>
+                <th>States</th>
+                <th>Processes</th>
+            </tr>
+            <tr>
+                <td>$s_{1 \rightarrow 2}$</td>
+                <td>Isentropic expansion of steam in turbine from pressure p<sub>1</sub> to p<sub>2</sub>.</td>
+            </tr>
+            <tr>
+                <td>$s_{2 \rightarrow 3}$</td>
+                <td>At constant pressure p<sub>2</sub> and temperature T<sub>2</sub>, exhaust steam from turbine
+                    condensed in condenser</td>
+            </tr>
+            <tr>
+                <td>$s_{3 \rightarrow 4}$</td>
+                <td>Water from hot-well or surge tank, at low pressure, pumped into boiler at high pressure
+                    p<sub>1</sub>, while isentropic and isochoric.</td>
+            </tr>
+            <tr>
+                <td>$s_{4 \rightarrow 5}$</td>
+                <td>Water heated up to evaporation temperature T<sub>1</sub>, called sensible heating, and heat supplied
+                    is called sensible heat of water.</td>
+            </tr>
+            <tr>
+                <td>$s_{5 \rightarrow 1}$</td>
+                <td>Isobaric and isothermal evaporation of water, at p<sub>1</sub> and T<sub>1</sub>, until it is
+                    entirely steam. Heat supplied is called latent heat of vaporization.</td>
+            </tr>
+        </table>
+
+        <p>
+            Isentropic means that there is no change in entropy during the process, isobaric means that the process
+            maintains constant pressure, isothermal means constant temperature, and isochoric means constant volume.
+        </p>
+
+        <p>
+            The original steam locomotives neglected the condensation process and let water evaporate into the
+            atmosphere.
+        </p>
+        <p></p>
+
+        <div style="display: flex; justify-content: center;">
+            <img style="width: 50%; box-shadow: 0px 0px 10px gray;" src="/images/steam/pvtsdiagramsofrankinecycle.png"
+                alt="steam engine schematic">
+        </div>
+        <div class="caption" style=" text-align: justify;">
+            Pressure-Volume (P-V) and Temperature-Entropy (T-S) diagrams of the closed-loop, ideal, normal rankine cycle
+        </div>
+
+        <p>
+            The weird curve in these diagrams is called the "vapor dome," which describes water (or any other fluid) in
+            a saturated state, known as "wet steam" for water, a mixture of liquid and gaseous water. According to the
+            pure-substance model, substances in a vapor-liquid saturated state maintain constant pressure when the
+            piston is free to move and heat is added, which is why processes 5-1 and 2-3 are entirely horizontal
+            (isobaric) while within the vapor dome. Subsequently, these processes maintain constant temperature, so
+            those same processes would appear horizontal in a temperature-entropy diagram as well, as pictured.</p>
+    </div>
+
+</section>
+
+<section>
+    <h3 id="{{ point2 }}p2">
+        {{ point2 }}
+    </h3>
+
+    <p>
+        Here are just a couple of notable steam locomotives, but you can check more of them out <a href="https://www.steamlocomotive.com/types/best/">here</a>.
+    </p>
+
+    <div class="blog-text">
+        <h4>PRR K4</h4>
+        <p>
+            The Pennsylvania Railroad (PRR, or "Pennsy") K4, part of the 4-6-2 "Pacific" class, is likely one of the most successful and legendary American locomotives of all time.
+            425 of them were built between 1914 and 1928.<a href="#s5"><sup>5</sup></a>
+        </p>
+
+        <p>
+            They were known for being incredibly efficient and used as the primary mainline passenger steam
+            locomotive for the PRR. Many attempts were made to improve on the K4, such as the K5 and T1, but the tried
+            and true K4 held strong and maintained dominance as the primary passenger locomotive for 30-40 years, until
+            they were eventually replaced by diesel locomotives.
+        </p>
+
+        <p>
+            Pennsylvania holds much reverence for the K4s. In 1987, the Pennsylvania governor signed into law the
+            designation of two preserved K4s, Nos. 1361 and 3750, as the state's official steam locomotives. 1361 was
+            chosen as a Pennsy monument at the famous Horseshoe curve, and this specific K4 was eventually moved to the
+            Railroader's Memorial Museum in Altoona, PA.<a href="#s6"><sup>6</sup></a>
+        </p>
+        <p>
+
+        </p>
+        <div style="display: flex; justify-content: center;">
+            <img style="width: 50%; box-shadow: 0px 0px 10px gray;" src="/images/steam/k41361.jpg" alt="K4 1361">
+        </div>
+        <div class="caption" style=" text-align: justify;">
+            K4 #1351 on display at the Horsehoe Curve in 1969.<a href="#s6"><sup>6</sup></a>
+        </div>
+
+        <h4>
+            Hudson
+        </h4>
+
+        <p>
+            Probably the most well-known steam locomotive was the New York Central Hudson, part of the 4-6-4 "Hudson" class. A total of 275 of them were produced between 1927 and 1938. Named after the Hudson river, these locomotives were the first Hudson type examples built and used in North America. The Hudsons had different models, but they were all quite similar in functionality: J-1 (built in 1927-1931), J-2 (1929-1931), and J-3 (1937-1938).
+        </p>
+
+        <p>
+            The Hudsons were built since the existing 4-6-2 Pacifics were not able to keep up with the demands of longer, heavier trains and higher speeds. The Hudsons' main appeal was their power at top speeds, but they were unfortunately poor performers at low speeds, so they were largely favored for use by railroads with flat terrain and straight routes.
+        </p>
+
+        <p>
+            The Hudsons were known for their excellent quality. With the craze of the diesel-powered Zephyr streamliner, multiple Hudsons were fitted with a streamlined exterior, so they were quite good-looking and often featured in NYC advertising.
+        </p>
+
+        <p>
+
+        </p>
+        <div style="display: flex; justify-content: center;">
+            <img style="width: 50%; box-shadow: 0px 0px 10px gray;" src="/images/steam/NY_Worlds'_Fair_streamlined_Hudson.jpg" alt="J-3a Hudson">
+        </div>
+        <div class="caption" style=" text-align: justify;">
+            Streamlined J-3a Hudson at the 1939 New York World's Fair.<a href="#s7"><sup>7</sup></a>
+        </div>
+
+        <p>
+            All Hudsons were scrapped when the railroad dieselized, but there still exists a J-1d generator car that is part of the Steamtown National Historic Site collection.<a href="#s7"><sup>7</sup></a>
+        </p>
+        <p>
+
+        </p>
+        <div style="display: flex; justify-content: center;">
+            <img style="width: 50%; box-shadow: 0px 0px 10px gray;" src="/images/steam/connor.webp" alt="connor from thomas and friends">
+        </div>
+        <div class="caption" style=" text-align: justify;">
+            Connor from the Thomas & Friends television series is modeled after a streamlined NYC Hudson.<a href="#s7"><sup>7</sup></a>
+        </div>
+
+</section>
+
+<section>
+
+<h3 id="{{ point3 }}p2">
+    {{ point3 }}
+</h3>
+
+<div class="blog-text" style="overflow-wrap: break-word;">
+    <p>
+        What type of train series wouldn't have more tidbits of information for us to memorize for fun???
+    </p>
+
+    <ol>
+        <li>The standard American gauge for railroad tracks is 1435 mm or 4' 8.5". Almost all prominent transit systems
+            in the US, such as the Massachusetts Bay Transportation Authority (MBTA, or the "T"), Metropolitan
+            Transportation Authority (MTA), and Chicago Transit Authority (CTA, or the "L"), use this gauge.</li>
+        <li>The most prominent transit system in the US that does not use this gauge is the Bay Area Rapid Transit
+            (BART) system, as they use a much wider gauge of 5' 6". According to their website, this is because the
+            wider gauge ensures that lighter vehicles stay stable. This makes sense considering that BART was planned to
+            go across the lower deck of the Golden Gate Bridge, where the cars would need to be lighter and stable
+            against higher wind speeds.<a href="#s8"><sup>8</sup></a></li>
+        <li>
+            According to this Wikipedia article, there are only 12 heavy rail rapid transit systems in the US. C'mon, we
+            can do better than that.<a href="#s9"><sup>9</sup></a></li>
+        </li>
+    </ol>
+</div>
+</section>
+
+<section>
+    <h3 id="{{ point4 }}p2">
+        {{ point4 }}
+    </h3>
+
+    <div class="blog-text">
+        <p>
+            Although there is much more to talk about, I will send this off for now, as I am quite hosed from schoolwork
+            here at MIT.
+        </p>
+
+        <p>
+            The next train post will be on diesel trains, so stay tuned!
+        </p>
+</section>
+
+<section>
+    <h3 id="{{ sources }}p2">
+        {{ sources }}
+    </h3>
+
+    <div class="blog-text" style="overflow-wrap: break-word;">
+        <p id="s1">
+            <sup>1</sup><a
+                href="https://startpac.com/blog/types-of-locomotive-engines/">https://startpac.com/blog/types-of-locomotive-engines/</a>
+        </p>
+        <p id="s2">
+            <sup>2</sup><a
+                href="https://science.howstuffworks.com/transport/engines-equipment/steam.htm">https://science.howstuffworks.com/transport/engines-equipment/steam.htm‌</a>
+        </p>
+
+        <p id="s3">
+            <sup>3</sup><a
+                href="https://www.explainthatstuff.com/steamengines.html">https://www.explainthatstuff.com/steamengines.html
+                ‌</a>
+        </p>
+        <p id="s4">
+            <sup>4</sup><a
+                href="https://www.researchgate.net/profile/Abhishek-Gaikwad-3/publication/263773573_Thermal_Analysis_of_Steam_Turbine_Power_Plants/links/0046353be361b3a1ef000000/Thermal-Analysis-of-Steam-Turbine-Power-Plants.pdf?origin=figuresDialog_download">https://www.researchgate.net/profile/Abhishek-Gaikwad-3/publication/263773573_Thermal_Analysis_of_Steam_Turbine_Power_Plants/links/0046353be361b3a1ef000000/Thermal-Analysis-of-Steam-Turbine-Power-Plants.pdf?origin=figuresDialog_download</a>
+        </p>
+
+        <p id="s5">
+            <sup>5</sup><a
+                href="https://www.steamlocomotive.com/types/best/">https://www.steamlocomotive.com/types/best/</a>
+        </p>
+
+        <p id="s6">
+            <sup>6</sup><a
+                href="https://en.wikipedia.org/wiki/Pennsylvania_Railroad_class_K4">https://en.wikipedia.org/wiki/Pennsylvania_Railroad_class_K4</a>
+        </p>
+
+        <p id="s7">
+            <sup>7</sup><a
+                href="https://en.wikipedia.org/wiki/New_York_Central_Hudson">https://en.wikipedia.org/wiki/New_York_Central_Hudson</a>
+        </p>
+
+        <p id="s8">
+            <sup>8</sup><a
+                href="https://www.bart.gov/news/articles/2022/news20220708-2">‌https://www.bart.gov/news/articles/2022/news20220708-2</a>
+        </p>
+        <p id="s9">
+            <sup>9</sup><a
+                href="https://en.wikipedia.org/wiki/List_of_United_States_rapid_transit_systems">‌https://en.wikipedia.org/wiki/List_of_United_States_rapid_transit_systems</a>
+        </p>
+    </div>
+</section>
