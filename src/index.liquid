@@ -11,20 +11,21 @@ layout: "base.njk"
         <figcaption>Me popping a balloon at the MIT Edgerton Strobe Project Laboratory</figcaption>
     </figure> -->
     <div>
-        <img src="/images/me.jpg" alt="Image of myself" class="center"/>
+        <img src="/images/me.jpg" alt="Image of myself" class="center" />
     </div>
-    
+
 
     <section>
         <h2>
             About Me
         </h2>
-    
+
         <p>
             Pronouns: they/them
         </p>
-    
-        <p>I like to go by Jelly (like the food). I am an undergraduate student at MIT majoring in Mechanical Engineering with Energy.
+
+        <p>I like to go by Jelly (like the food). I am an undergraduate student at MIT majoring in Mechanical
+            Engineering with Energy.
             I am also a big bird person, with my current favorite bird being the American Crow.
         </p>
 
@@ -36,6 +37,28 @@ layout: "base.njk"
 
 </div>
 
+<div>
+    <h2>
+        Latest Project
+    </h2>
+
+    {% assign lastProject = collections.projects.last %}
+
+    <div>
+        <p>
+            Title: <a href="{{ lastProject.url }}">{{ lastProject.data.title }}</a>
+        </p>
+    </div>
+
+    <div class="project-interactive-container">
+        <iframe class="project-interactive" src="{{ lastProject.data.edrawingpath }}" frameborder="0"></iframe>
+    </div>
+
+    <a href="projects/" style="width: 110px; text-decoration: underline">
+        More projects
+    </a>
+</div>
+
 <div class="blog-links">
 
     <h2>
@@ -45,24 +68,25 @@ layout: "base.njk"
     {% assign lastPost = collections.posts.last %}
 
     <a href="{{ lastPost.url }}">
-            <section>
-                <div class="blogpost-backdrop">
-                    <h3>
-                        {{ lastPost.data.title }}
-                    </h3>
-                    <p style="color: white;">
-                        {{ lastPost.data.descriptor }}
-                    </p>
-                    <p>
-                        Updated: {{ lastPost.data.displayDate }}
-                    </p>
-                </div>
-                <div class="background-image" style="background-image: url('{{ lastPost.data.bannerImage }}')" title="{{ lastPost.data.imageTitle }}">
-                </div>
-            </section>
+        <section>
+            <div class="blogpost-backdrop">
+                <h3>
+                    {{ lastPost.data.title }}
+                </h3>
+                <p style="color: white;">
+                    {{ lastPost.data.descriptor }}
+                </p>
+                <p>
+                    Updated: {{ lastPost.data.displayDate }}
+                </p>
+            </div>
+            <div class="background-image" style="background-image: url('{{ lastPost.data.bannerImage }}')"
+                title="{{ lastPost.data.imageTitle }}">
+            </div>
+        </section>
     </a>
 
     <a href="blog/" style="width: 110px; text-decoration: underline">
-        Read more
+        More blogs
     </a>
-    </div>
+</div>
