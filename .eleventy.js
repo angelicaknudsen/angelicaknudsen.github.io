@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/script.js");
   eleventyConfig.addPassthroughCopy("src/birds.csv");
   eleventyConfig.addPassthroughCopy('src/.birds')
+  eleventyConfig.addPassthroughCopy('src/images/cwc-2026/overallconcept.html')
 
   return {
     dir: {
