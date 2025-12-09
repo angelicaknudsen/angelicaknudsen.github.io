@@ -863,13 +863,40 @@ table {
     margin: 5px;
 }
 
+.project-image-container-landscape {
+    display: block;
+    /* padding: 10px; */
+    justify-content: center;
+    height: auto;
+}
+
 .project-image {
     padding: 15px;
     height: 100%;
 }
 
+.project-image-landscape {
+    padding: 15px;
+    margin: auto;
+    width: 80%;
+}
+
+.project-image {
+    padding: 15px;
+    height: 100%;
+}
+
+/* .project-image {
+    padding: 15px;
+    height: 100%;
+} */
+
 .project-image img {
     height: 100%;
+}
+
+.project-image-landscape img {
+    width: 100%;
 }
 
 .project-interactive-container {
@@ -1046,4 +1073,8 @@ table {
         width: 100%;
         height: auto;
     }
+
+    .project-image-landscape {
+    width: 90%;
+}
 }
