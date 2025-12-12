@@ -533,14 +533,15 @@ html {
 
 /* creating better about me */
 
-/* .about-me {
+.about-me {
     display: flex;
     gap: 20px;
-    align-content:flex-start;
-} */
+    align-items:flex-start;
+}
 
 .about-me section {
     margin: 0px;
+    width: 100%;
 }
 
 .about-me h2 {
@@ -550,13 +551,14 @@ html {
 .about-me div {
     display: flex;
     align-items: center;
+    width: 100px;
 }
 
 .about-me img {
     margin: 20px;
     object-fit: cover;
     margin: auto;
-    width: 40%;
+    width: 100%;
     aspect-ratio: 1/1;
     border-radius: 100%;
 }
