@@ -59,6 +59,31 @@ self: "projects"
     </a>
 </div> {% endcomment %}
 
+
+<h2>
+    Featured Projects
+</h2>
+
+<div class='project-gallery' id="projectGallery">
+
+    {% for featuredproject in collections.featuredprojects reversed %}
+        <div class="projectIndex" data-projectindex="{{ featuredproject.data.projectIndex }}" title="{{ featuredproject.data.title }}" style="background-image: url('{{ featuredproject.data.image }}')">
+            <a href="{{ featuredproject.url }}">
+                <div class="backdrop">
+                    <p>
+                        {{ featuredproject.data.title }}
+                    </p>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>
+
+
+<h2>
+    Other Projects
+</h2>
+
 <div class='project-gallery' id="projectGallery">
 
     {% for project in collections.projects reversed %}
