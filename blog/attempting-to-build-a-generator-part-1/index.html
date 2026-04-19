@@ -99,7 +99,7 @@
 </div>
 
 <p class="date">
-   Date: 10/05/2025
+   Date: 04/19/2026
 </p>
 
 
@@ -187,7 +187,7 @@
     </div>
 
     <p>
-        From what I've seen, the exact ratio of number of magnets to coils depends on your design, which can be 1:1*, 2:1, 4:3, etc. (*generally, you don't want a 1:1 ratio though, so sorry that my drawing didn't take this into account). <a href="https://scoraigwind.co.uk/2012/12/3-phase-stator-visualisation/">This</a> source says that a ratio of 12 magnets to 9 coils produces a clean three-phase output, so I'll be going with this. Why three-phase? It's to keep the system more power efficient. This is because the induced voltage coming from a generator will always be alternating current (AC) since the magnetic flux will be rapidly changing from one direction to the other, and from the graph below, a one-phase generator's induced current will end up looking like a sine wave.
+        From what I've seen, the exact ratio of number of magnets to coils depends on your design, which can be 1:1*, 2:1, 4:3, etc. (*generally, you don't want a 1:1 ratio though, so sorry that my drawing didn't take this into account). <a href="https://scoraigwind.co.uk/2012/12/3-phase-stator-visualisation/">This</a> source says that a ratio of 12 magnets to 9 coils produces a clean three-phase output, so I'll be going with this. Why three-phase? It's to keep the system more power efficient. This is because the induced voltage coming from a generator will always be alternating current (AC) since the magnetic flux will be rapidly changing from one direction to the other. From the graph below, a one-phase generator's induced current will end up looking like a sine wave, where there are many points of zero current.
     </p>
 
     <div class="bird-gallery">
@@ -207,11 +207,11 @@
     </div>
 
     <p>
-        Even after all of this, YOU ARE NOT DONE! You will need a full-wave (bridge) rectifier to convert AC to DC. It is necessary so that the current/voltage stays unidirectional, which is what we can actually use for energy. I'm lazy, so I will not be drawing this out, but <a href="https://www.electronics-tutorials.ws/diode/diode_6.html">here</a> is a good resource on understanding how a basic rectifier works. You should throw in a capacitor to smoothen the voltage across the load.
+        Even after all of this, YOU ARE NOT DONE! For the CWC, we need DC voltage output, so we will need a full-wave (bridge) rectifier to convert AC to DC. I'm lazy, so I will not be drawing this out, but <a href="https://www.electronics-tutorials.ws/diode/diode_6.html">here</a> is a good resource on understanding how a basic rectifier works. You should throw in a capacitor to smoothen the voltage across the load.
     </p>
 
     <p>
-        There are some other things to keep in mind. For radial flux generators, you want the coils wrapped around iron cores to help minimize the air gap (open space between stator and rotor), as bigger air gaps reduce efficiency. Iron cores also help with concentrating the magnetic flux. Additionally, steel is a good material for the stator and rotor since it helps increase magnetic permeability. However, this comes at a cost: <a href="https://en.wikipedia.org/wiki/Eddy_current">eddy currents</a>. To minimize eddy currents and therefore overheating and power losses, good generators have stators and rotors made from a bunch of stacked laminated electrical steel sheets, which are insulated from each other and are oriented to minimize the surface area available to eddy currents. My understanding is that these things aren't cheap, and you need hundreds of layers, so I am unsure if I will actually be able to get my hands on these. However, they're often thin enough that you can just laser cut them, so we'll see.
+        There are some other things to keep in mind. You want to make the stator and rotor made out of steel since it helps increase magnetic permeability. However, this comes at a cost: <a href="https://en.wikipedia.org/wiki/Eddy_current">eddy currents</a>. To minimize eddy currents and therefore overheating and power losses, good generators have stators and rotors made from a bunch of stacked laminated electrical steel sheets, which are insulated from each other and are oriented to minimize the surface area available to eddy currents. My understanding is that these things aren't cheap, and you need hundreds of layers, so I am unsure if I will actually be able to get my hands on these. However, they're often thin enough that you can just laser cut them, so we'll see.
     </p>
 </div>
 </section>
