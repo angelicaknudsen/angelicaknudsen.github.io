@@ -2,11 +2,11 @@
 title: "2026 CWC Wind Turbine"
 layout: "projects.njk"
 timeline: "Timeline: Aug 2025-Present"
-image: "/images/cwc-2026/overallconcept.PNG"
-edrawingpath: "/images/cwc-2026/overallconcept.html"
+image: "/images/cwc-2026/nacellev3-closeup.JPG"
+edrawingpath: "/images/cwc-2026/fullturbine.html"
 self: "2026-cwc-wind-turbine"
 projectIndex: "9"
-date: 2026-02-13
+date: 2026-05-08
 ---
 
 <script>
@@ -35,8 +35,7 @@ date: 2026-02-13
 
             <p>
                 As build lead of MIT Wind, I lead the mechanical and electrical subteams on the design and testing of
-                the turbine. The designs presented here are preliminary and will be iterated in the coming
-                months.
+                the turbine.
             </p>
 
         </div>
@@ -47,33 +46,49 @@ date: 2026-02-13
             </h3>
 
             <p>
-                So far, we designed a rudimentary, bare-bones turbine that has all the mechanical parts that enable
-                power generation, pictured below.
+                Our focus this year was to simplify the design as much as we could to reduce complexity and therefore points of failure for increased robustness.
+            </p>
+
+            <p>
+                We kept the pitch of the blades fixed for this reason. This way, the main active controls necessary are for the load. To do this, we kept it as simple as possible by creating a mapping function correlating the measured RPM (from the optical encoder of the generator) to the ideal resistance for max power output.
+            </p>
+
+            <p>
+                We control resistance using a variable resistor array of nine resistors, each with a MOSFET controlled with an Arduino. The resistors are rated for 100W, which makes our system very robust, and the parallel design makes it so that we have a wide variety of discrete resistances depending on which MOSFETs are on.
+            </p>
+
+            <p>
+                We added a braking mechanism, which is simply a servo with an arm and braking pad for pressing against the drive shaft to increase friction and slow the rotor. It activates when the optical encoder detects an RPM above safety limits imposed by the competition rules, or when the emergency stop button is pressed.
+            </p>
+
+            <p>
+                The blades were designed using QBlade. For the blade cross-section, we chose the NACA 4412 airfoil due to its superior lift at lower speeds. The blades were FDM 3D-printed using PLA filament due to its light-weightness and availability, making it great for quick iterative design. The rotor was tested to go up to 2800 RPM, making the centrifugal forces quite significant. To address this, we oriented the 3D-print such that filament lines run along the length of the blades.
+            </p>
+
+            <p>
+                <a href="/images/cwc-2026/MITWIND_2026-04-23-TDT-Design Report-1.pdf">Here</a> is the full report on more of the specifics of the design.
             </p>
 
 
             <div class="project-image-container">
 
                 <div class="project-image">
-                    <img src="/images/cwc-2026/overallconceptv1.PNG" alt="iso view">
+                    <img src="/images/cwc-2026/nacellev3.JPG" alt="iso view">
                 </div>
                 <div class="project-image">
-                    <img src="/images/cwc-2026/overallconceptv1_frontview.PNG" alt="front view">
-                </div>
-                <div class="project-image">
-                    <img src="/images/cwc-2026/overallconceptv1_sideview.PNG" alt="side view">
+                    <img src="/images/cwc-2026/nacellev3-closeup.JPG" alt="front view">
                 </div>
             </div>
             <div class="project-image-caption">
                 <p>
-                    Figure 1: Isometric, front, and side view of the preliminary CAD for the MIT Wind turbine
+                    Figure 1: Full view and close-up of CAD for MIT Wind turbine
                 </p>
             </div>
 
             <p></p>
 
             <div class="project-interactive-container">
-                <iframe class="project-interactive" src="/images/cwc-2026/overallconcept.html" frameborder="0"></iframe>
+                <iframe class="project-interactive" src="/images/cwc-2026/fullturbine.html" frameborder="0"></iframe>
             </div>
 
         </div>
