@@ -825,6 +825,10 @@ figcaption div {
     width: 50%;
 }
 
+.blog-pic-container {
+    margin-top: 25px;
+}
+
 .seeMore {
     color: rgb(150, 150, 150);
 }
