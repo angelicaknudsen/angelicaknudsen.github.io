@@ -22,66 +22,61 @@
   </script>
 </head>
 <body>
-  <div class="topnav" id="tn">
-        <div class="billy">
-            <a class = 'name' href="/">
-                <img src="/images/billy.png" title="Hi! I'm Billy, a rock pigeon." height=50px width=60px class='img-fluid' alt="billy">
-            </a>
-        </div>
-
-        <div class="dropdown-menu" id="dropdown-menu-id">
-            <input type="checkbox" id="expand-toggle">
-
-            <label for="expand-toggle" id="expand-btn">
-                <div class="expand-menu">
-                    <div class="menu-name" id="menuuuu">
-                        Menu
-                    </div>
-                    <div class="menu-arrow">
-                        ▼
-                    </div>
-                </div>
-            </label>
-
-            <div class="menu-sublinks-holder">
-                <div class="menu-sublinks">
-                    <div>
-                        <a href="/">Home</a>
-                    </div>
-                    <div>
-                        <a href="/resume/">Resume</a>
-                    </div>
-                    <div>
-                        <a href="/projects/">Projects</a>
-                    </div>
-                    <div>
-                        <a href="/blog/">Blog</a>
-                    </div>
-                    <div>
-                        <a href="/birds/">Birds</a>
-                    </div>
-                    <div>
-                        <a href="/hobbies/">Hobbies</a>
-                    </div>
-                </div>
+    <header>
+        <div class="topnav" id="tn">
+            <div class="billy">
+                <a class = 'name' href="/" tabindex = "0">
+                    <img src="/images/billy.png" title="Hi! I'm Billy, a rock pigeon." height=50px width=60px class='img-fluid' alt="billy">
+                </a>
             </div>
-            
-        </div>
 
-        <!--
-        <div class="sublinks">
-            <a class="active" href="/">Home</a>
-            <a href="resume/">Resume</a>
-            <a href="projects/">Projects</a>
-            <a href="blog/">Blog</a>
-            <a href="hobbies/">Hobbies</a>
-        </div>-->
-    </div>
+            <div class="dropdown-menu" id="dropdown-menu-id">
+                <button class="expand-menu" aria-label="expand-menu" id="expand-menu" aria-expanded="false">
+                    <div class="hamburgerbutton" id="hamburgerbutton">
+                    Menu
+                    <div class="hblinecontainer">
+                        <div class="hbline">
+                        </div>
+                        <div class="hbline">
+                        </div>
+                        <div class="hbline">
+                        </div>
+                    </div>
+                </div>
+                </button>
+
+                <nav class="menusublinkswrapper" id="menusublinkswrapper" aria-label="Main">
+                    <ul class="menusublinks" id="menusublinks">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/resume/">Resume</a>
+                        </li>
+                        <li>
+                            <a href="/projects/">Projects</a>
+                        </li>
+                        <li>
+                            <a href="/blog/">Blog</a>
+                        </li>
+                        <li>
+                            <a href="/birds/">Birds</a>
+                        </li>
+                        <li>
+                            <a href="/hobbies/">Hobbies</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+            </div>
+        </div>
+    </header>
+  
 
   <!-- -->
-  <div class="content">
+  <main class="content">
 
-    <main class="main container">
+    <div class="main container">
       
 <div class='top-layout'>
     <a href="/">home</a> /
@@ -179,16 +174,16 @@
     </ul>
 </div>
 
-    </main>
+    </div>
 
     <div class='back-to-top'>
        <a href="#" onclick="document.body.scrollTop=0;document.documentElement.scrollTop=0;event.preventDefault()">
             ↑ Back to top
         </a>
     </div>
-  </div>
+</main>
 
-  <div class="bottomnav">
+  <footer class="bottomnav">
         <div class="contact-links">
             <a href="mailto:angelica.knudsen05@gmail.com" title="Email">
                 <div class="email-logo">
@@ -209,10 +204,10 @@
 
         <div class="copyright">
             <p>
-                &copy; Angelica Knudsen 2025
+                &copy; Angelica Knudsen 2026
             </p>
         </div>
-    </div>
+    </footer>
 
     <div>
         <a href="#" onclick="document.body.scrollTop=0;document.documentElement.scrollTop=0;event.preventDefault()">
@@ -242,5 +237,7 @@
             }
         });
     </script>
+
+    <script src="/script.js"></script>
 </body>
 </html>
