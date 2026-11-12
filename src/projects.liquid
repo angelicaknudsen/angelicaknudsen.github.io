@@ -8,58 +8,6 @@ self: "projects"
     {{ title }}
 </h1>
 
-{% comment %} <div class="project-gallery" id='projgal'>
-    <a href="#SuperUROP-anchor">
-        <img src="/images/hummingbird.jpg" alt="Hummingbird">
-        <p>
-            How Hummingbirds Make Light Dance and Water Bounce
-        </p>
-    </a>
-    <a href="#2671-anchor">
-        <img src="/images/samplecadisoview.png" alt="sample CAD">
-        <p>
-            Hydrophobicity of Feather-Inspired, 3D-Printed Polymeric Materials
-        </p>  
-    </a>
-    <a href="#scrappy-anchor">
-        <img src="/images/yarnwinder.jpg" alt="yarn winder">
-        <p>
-            Scrappy Yarn Winder
-        </p>
-    </a>
-    <a href="#mod-anchor">
-        <img src="/images/waterbox1.jpg" alt="water box">
-        <p>
-            Modular Water Collection System
-        </p>
-    </a>
-    <a href="#ladder-anchor">
-        <img src="/images/Assembly v12 cropped.png" alt="hook assembly">
-        <p>
-            Ladder Climbing Robot
-        </p>
-    </a>
-    <a href="#sensory-anchor">
-        <img src="/images/sensorysteamroller.jpeg" alt="sensory steam roller">
-        <p>
-            Sensory Steam Roller (in progress)
-        </p>
-    </a>
-    <a href="#data-anchor">
-        <img src="/images/conductivityplotforcastaway.png" alt="plot">
-        <p>
-            Data Processor and Grapher for Marine Research
-        </p>
-    </a>
-    <a href="/projects/personal-jeopardy">
-        <img src="/images/jeopardychoicescreen.png" alt="jeopardy">
-        <p>
-            Personal Jeopardy Game
-        </p>
-    </a>
-</div> {% endcomment %}
-
-
 <h2>
     Featured Projects
 </h2>
@@ -84,7 +32,6 @@ self: "projects"
 </h2>
 
 <div class='project-gallery' id="projectGallery">
-
     {% for project in collections.projects reversed limit: -3%}
         <div class="projectIndex" data-projectindex="{{ project.data.projectIndex }}" title="{{ project.data.title }}" style="background-image: url('{{ project.data.image }}')">
             <a href="{{ project.url }}">
@@ -109,24 +56,6 @@ self: "projects"
         Sort list
 </button>
 
-<script>
-function comparator(a, b) {
-    if (a.dataset.projectindex < b.dataset.projectindex)
-        return 1;
-    if (a.dataset.projectindex > b.dataset.projectindex)
-        return -1;
-    return 0;
-}
-
-function SortData() {
-    var indexes = document.querySelectorAll("[data-projectIndex]");
-    var indexesArray = Array.from(indexes);
-    console.log(indexesArray)
-    let sorted = indexesArray.sort(comparator);
-    sorted.forEach(e =>
-        document.querySelector("#projectGallery").appendChild(e));
-}
-</script> {% endcomment %}
 
 <div class="oldprojectstuff">
 {% comment %} <section>
