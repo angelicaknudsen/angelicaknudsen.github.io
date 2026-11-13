@@ -35,16 +35,23 @@ layout: "base.njk"
         Featured Project
     </h2>
 
-    {% assign lastProject = collections.projects.last %}
+    <div class='project-gallery' id="projectGallery" style="grid-template-columns: 1fr;">
+        {% assign lastProject = collections.projects.last %}
 
-    <div>
-        <p>
-            Title: <a href="{{ lastProject.url }}">{{ lastProject.data.title }}</a>
-        </p>
-    </div>
+        <div class="projectIndex" data-projectindex="{{ lastProject.data.projectIndex }}" title="{{ lastProject.data.title }}" style="background-image: url('{{ lastProject.data.image }}')">
+            <a href="{{ lastProject.url }}">
+                <div class="backdrop">
+                    <p>
+                        {{ lastProject.data.title }}
+                    </p>
+                </div>
+            </a>
 
-    <div class="project-interactive-container">
-        <iframe class="project-interactive" src="{{ lastProject.data.edrawingpath }}" frameborder="0"></iframe>
+            
+        </div>
+        
+
+        
     </div>
 
     <a href="projects/" style="width: 110px; text-decoration: underline">
